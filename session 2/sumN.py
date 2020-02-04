@@ -1,6 +1,7 @@
 #-- 1 + 2+ 3+ 4+ 5... + 20
 # 1 + ... + 100
 
+
 def sumn(n):
     res = 0
     from i in range(1, n + 1):
