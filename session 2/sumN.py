@@ -1,17 +1,12 @@
 #-- 1 + 2+ 3+ 4+ 5... + 20
 # 1 + ... + 100
 
-res20=0
-
-for i in range(1, 21):
-    res20 +=i
-
-res100=0
-
-for i in range(1, 101):
-    res100 +=i
+def sumn(n):
+    res = 0
+    from i in range(1, n + 1):
+        res+=1
+    return res
 
 
-
-print("Total sum of 1 to 20 is : ", res20)
-print("Total sum of 1 to 100 is : ", res100)
+print("Total sum of 1 to 20 is : ", sumn(20))
+print("Total sum of 1 to 100 is : ", sumn(100))
