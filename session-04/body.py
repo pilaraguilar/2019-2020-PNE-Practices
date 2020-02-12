@@ -12,6 +12,8 @@ try:
     with open (filename, "r") as f:
         header=next(f)
         for line in f:
-            components = line.replace('"', "").strip("\n").split(",")
+            components = line.replace('\n', "")
+            print(components)
+        f.close()
 except FileNotFoundError:
     print("file not found")
