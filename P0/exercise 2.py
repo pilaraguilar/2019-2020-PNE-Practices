@@ -6,7 +6,7 @@ FILENAME = "U5.txt"
 DNA_FILE = FOLDER + FILENAME
 
 # -- Open the DNA file
-seq = seq_read_fasta(DNA_FILE)
+seq = seq_read(DNA_FILE)
 
 print("------> Exercise 2")
 print(f"DNA file: {FILENAME}")

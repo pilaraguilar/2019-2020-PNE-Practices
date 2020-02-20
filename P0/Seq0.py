@@ -1,7 +1,7 @@
 #ex2
 from pathlib import Path
 
-def seq_read_fasta(filename):
+def seq_read(filename):
     file_contents= Path(filename).read_text() #read the file
     seq_dna=file_contents
     index_finish= seq_dna.find("\n")
@@ -15,7 +15,7 @@ def seq_read_fasta(filename):
 def seq_len(filename):
     return len(filename)
 
-def seq_read_fasta2(filename):
+def seq_read2(filename):
     c= Path(filename).read_text()
     b=c.split("\n")[1:]
     return "".join(b)
@@ -44,3 +44,7 @@ def seq_complement(seq):
     for b in seq:
         r += e[b]
     return r
+
+
+
+

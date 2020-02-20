@@ -4,6 +4,7 @@ e = ".txt"
 genes = ["U5", "ADA", "FRAT1", "FXN", "U5"]
 bases = ['A', 'C', 'T', 'G']
 
+print("-----| Exercise 5 |------")
 for g in genes:
-    seq= seq_read_fasta2(folder + g + e)
+    seq= seq_read2(folder + g + e)
     print("Gene", g, count(seq) )
