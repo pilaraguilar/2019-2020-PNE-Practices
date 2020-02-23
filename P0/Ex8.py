@@ -8,7 +8,7 @@ bases = ['A', 'C', 'T', 'G']
 print("-----| Exercise 8 |------")
 
 for g in genes:
-    seq= seq_read( folder + g + e)
+    seq= seq_read_fasta( folder + g + e)
     dictionary= count(seq)
     lit= list(dictionary.values())
     most_common= max(lit)

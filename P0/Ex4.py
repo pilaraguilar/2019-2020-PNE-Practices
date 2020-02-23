@@ -6,7 +6,7 @@ bases = ['A', 'C', 'T', 'G']
 
 print("-----| Exercise 4 |------")
 for g in genes:
-    seq= seq_read2(folder + g + e)
+    seq= seq_read_fasta2(folder + g + e)
     print("Gene", g )
     for b in bases:
         print(b, ":", seq_count_bases(seq, b))
