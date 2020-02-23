@@ -81,6 +81,7 @@ class Seq:
         else:
             for b in seq:
                 strbases += e[b]
+
                 return self.strbases
 
 
