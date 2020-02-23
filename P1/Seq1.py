@@ -48,10 +48,12 @@ class Seq:
 
 
 
-    def seq_read_fasta2(filename):
-        c= Path(filename).read_text()
-        b=c.split("\n")[1:]
-        return "".join(b)
+    def seq_read_fasta2(self, filename):
+        c= Path(filename).read_text() #reading the file
+        b=c.split("\n")[1:] #deleting the head
+        self.strbases = "".join(b)  #storing the sequence
+        return self.strbases
+
 
 
 
@@ -75,14 +77,14 @@ class Seq:
 
     def seq_complement(self):
         e = {"A": "T", 'T':'A', 'C':'G', 'G' :'C'}
-        strbases=""
+        es=""
         if self.strbases in [self.NULL, self.ERROR]:
-            return 0
-        else:
-            for b in seq:
-                strbases += e[b]
+            return self.strbases
 
-                return self.strbases
+        for b in self.strbases:
+            es += e[b]
+
+        return es
 
 
 

@@ -1,6 +1,6 @@
 from Seq1 import Seq
 print("-----| Practice 1, Exercise 3 |------")
-
+#we are creating sequences passing a string with the bases to an object
 #null sequence
 s1 = Seq()
 
