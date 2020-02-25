@@ -57,11 +57,11 @@ class Seq:
 
 
 
-    def seq_count_bases(self, b):
+    def seq_count_bases(self, b): #it applies to the dictionary,
         return self.strbases.count(b)
 
 
-    def count(self):
+    def count(self):  #times that a base is repited
         e={"A": self.seq_count_bases( "A"), 'T': self.seq_count_bases('T'),
                'C': self.seq_count_bases( 'C'), 'G': self.seq_count_bases( 'G')}
 

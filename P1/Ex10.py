@@ -7,11 +7,11 @@ e = ".txt"
 genes = ["U5", "ADA", "FRAT1", "FXN", "RNU6_269"]
 bases = ['A', 'C', 'T', 'G']
 
-s = Seq()
+
 
 for g in genes:
-    se= s.seq_read_fasta2(folder + g + e)
+    se= Seq().seq_read_fasta2(folder + g + e)
     d= se.count(se)
-    lit=list(d.values())
-    most_common= max(lit)
+    lit=list(d.values(se)) #creating a list with the value at the dictionary
+    most_common= max(lit) #calculating the "maximun" that is the base that repited more times
     print("Gene ", {g}, ": Most frequent Base:", {bases[lit.index(most_common)]})
