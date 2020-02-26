@@ -11,6 +11,7 @@ class Seq:
                 print("Sequence 2: ERROR!!")
             return
 
+
         self.strbases
 
     def __str__(self): #it run each time something is print

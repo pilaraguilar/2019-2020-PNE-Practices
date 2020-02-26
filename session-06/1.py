@@ -3,7 +3,7 @@ class Seq:
         self.strbases=strbases # passed as argument when creating the object
         print("New sequence created!") #It is a special method that is called every time a new object is created
 
-    def __str__(self): #it run each time something is print
+    def __str__(self): #it run, each time something is print
         return self.strbases #it gives the internal info of the object
 
 

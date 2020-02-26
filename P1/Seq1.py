@@ -1,4 +1,4 @@
-from pathlib import Path
+from pathlib import Path #for open a file
 
 class Seq:
     NULL="NULL"
