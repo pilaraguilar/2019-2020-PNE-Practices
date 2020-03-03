@@ -1,7 +1,7 @@
 #in this exercise we connect to our computer, poniendo en el terminal "nc -l" y sale el mensaje
 
 
-import termcolor
+
 import socket
 
 class Client:
@@ -36,11 +36,11 @@ class Client:
         # Return the response
         return response
 
-    def debug_talk(self, response):
+    def debug_talk(self, response):           #response message from the server
         m_from_server=self.talk(m_from_server)
         m_from_client=self.talk(m_from_client)
         print("To Server: ")
         print("From Server: ", end="")
-        termcolor.cprint(response, "blue")
+        termcolor.cprint(response, "blue") #blue color
         termcolor.cprint(m_from_server, "green")
         return m_from_server

@@ -1,5 +1,7 @@
 from Client0 import Client
 
+#Implement the debug_talk() method.
+# It just call the talk() method and prints both messages on the console, in different colors
 PRACTICE = 2
 EXERCISE = 4
 
