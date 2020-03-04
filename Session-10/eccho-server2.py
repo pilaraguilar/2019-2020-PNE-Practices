@@ -9,13 +9,13 @@ s=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
-IP= "192.168.1.43"
+IP= "127.0.0.1" #this number says that the ip is the one of my computer, using it in different computers
 PORT= 8080
 
 number_connect=0
 #bind the socket to the servers ip and port
 
-s.bind((IP,PORT))
+s.bind((IP , PORT))
 
 #listen
 s.listen()
