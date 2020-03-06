@@ -1,50 +1,61 @@
-#ex2
 from pathlib import Path
 
-def seq_read_fasta(filename): #Open a DNA file in FASTA format and return the sequence as a string
-    file_contents= Path(filename).read_text() #read the file
-    seq_dna=file_contents
-    index_finish= seq_dna.find("\n")
-    seq_dna= seq_dna[index_finish +1:]
-    seq_dna=seq_dna.replace("\n", "")
-    seq_dna=seq_dna[:20]
-    return seq_dna
+# ex1
 
-#ex3
+
+def seq_ping():
+    print("Testing the seq_ping() funcion", "\n", "OK")
+
+# ex2
+
+
+def seq_read_fasta(filename):
+    #  read the text
+    content = Path(filename).read_text()
+    space = content.find("\n")
+    #  remove the head
+    content = content[space + 1:]
+    #  remove the black spaces
+    content = content.replace("\n", "")
+
+    return content
+
+# ex3
+
 
 def seq_len(filename):
     return len(filename)
 
-def seq_read_fasta2(filename):
-    c= Path(filename).read_text()
-    b=c.split("\n")[1:]
-    return "".join(b)
+# ex4
 
-#ex4
 
-def seq_count_bases(seq, b):
-    return seq.count(b)
+def seq_count_base(filename, b):
+    # counting the base on the sequence
+    return filename.count(b)
 
-#ex5
-def count(seq):
-    e={"A": seq_count_bases(seq, "A"), 'T': seq_count_bases(seq, 'T'),
-           'C': seq_count_bases(seq, 'C'), 'G': seq_count_bases(seq, 'G')}
-    return e
+# ex5
 
-#ex6
 
-def seq_reverse(seq):
-    return seq[::-1]
+def count(sequence):
+    # creating a dictionary with the number of each base
+    bases = {'A': seq_count_base(sequence, 'A'), 'T': seq_count_base(sequence, 'T'),
+             'C': seq_count_base(sequence, 'C'), 'G': seq_count_base(sequence, 'G')}
+    return bases
 
-#Ex7
+# ex6
 
-def seq_complement(seq):
-    e = {"A": "T", 'T':'A', 'C':'G', 'G' :'C'}
-    r=""
-    for b in seq:
-        r += e[b]
+
+def seq_reverse(sequence):
+    return sequence[::-1]
+
+# ex7
+
+
+def seq_complement(sequence):
+    # we create a dictionary implementing the complementary and then,
+    # we travel around it
+    c = {"A": "T", 'T': 'A', 'C': 'G', 'G': 'C'}
+    r = ""
+    for b in sequence:
+        r += c[b]
     return r
-
-
-
-
