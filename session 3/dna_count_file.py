@@ -33,4 +33,3 @@ print("G: ", G)
 print("T: ", T)
 
 print("unknows: ", idk)
-

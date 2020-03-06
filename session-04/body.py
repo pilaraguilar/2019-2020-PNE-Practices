@@ -1,19 +1,17 @@
 from pathlib import Path
 
+
 # -- Constant with the new of the file to open
-filename = "U5.txt"
-
-# -- Open and read the file
+filename = "RNU6_269.txt"
 file_contents = Path(filename).read_text()
-
-# -- Print the contents on the console
 try:
-
-    with open (filename, "r") as f:
-        header=next(f)
+    with open(filename, "r") as f:
+        file = file_contents.split("\n")
+        header = next(f)
         for line in f:
-            components = line.replace('\n', "")
-            print(components)
-        f.close()
+            file = line.replace("\n", "")
+            print(file)
+
+
 except FileNotFoundError:
-    print("file not found")
+    print("File not found")
