@@ -3,10 +3,10 @@ from Client0 import Client
 PRACTICE = 2
 EXERCISE = 1
 
-print(f"-----| Practice {PRACTICE}, Exercise {EXERCISE} |------")
+print("-----| Practice ", PRACTICE, "Exercise" , EXERCISE , "|------")
 
 # -- Parameters of the server to talk to
-IP = "212.128.253.142"  #the ip of my computer
+IP = "127.0.0.1"  #the ip of my computer
 PORT = 8080
 
 # -- Create a client object

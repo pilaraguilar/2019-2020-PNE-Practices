@@ -2,7 +2,7 @@ import socket
 
 # SERVER IP, PORT
 PORT = 8080
-IP = "172.20.10.2"  #teacher ip
+IP = "127.0.0.1"  #my ip
 
 while True:
   # -- Ask the user for the message
