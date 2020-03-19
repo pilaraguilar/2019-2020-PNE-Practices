@@ -3,7 +3,7 @@ import socket
 
 # SERVER IP, PORT
 PORT = 8081
-IP =  "172.20.10.2"  #my ip
+IP =  "127.0.0.1"  #my ip
 
 # -- Create the socket
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

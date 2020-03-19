@@ -13,7 +13,7 @@ PORT = 8080
 c = Client(IP, PORT)
 
 # -- Test the ping method
-c.ping()
+ping()
 
 # -- Print the IP and PORTs
 print(f"IP: {c.ip}, {c.port}")

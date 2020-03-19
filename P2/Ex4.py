@@ -1,6 +1,6 @@
 from Client0 import Client
 
-#Implement the debug_talk() method.
+# Implement the debug_talk() method.
 # It just call the talk() method and prints both messages on the console, in different colors
 PRACTICE = 2
 EXERCISE = 4
@@ -8,7 +8,7 @@ EXERCISE = 4
 print(f"-----| Practice {PRACTICE}, Exercise {EXERCISE} |------")
 
 # -- Parameters of the server to talk to
-IP = "212.128.253.142"
+IP = "127.0.0.1"
 PORT = 8080
 
 c = Client(IP, PORT)

@@ -1,34 +1,34 @@
 import socket
 import termcolor
 
-#create the socket
+# create the socket
 
-s=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-#to avoid a problem when a port is using
+# to avoid a problem when a port is using
 
 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
-IP= "192.168.1.43"
-PORT= 8080
+IP = "192.168.1.43"
+PORT = 8080
 
-number_connect=0
-connections_list=[]
-#bind the socket to the servers ip and port
+number_connect = 0
+connections_list = []
+# bind the socket to the servers ip and port
 
-s.bind((IP,PORT))
+s.bind((IP, PORT))
 
-#listen
+# listen
 s.listen()
 
 print("Server is configured")
 
 while True:
-    #waiting for a client
+    # waiting for a client
     print("Waiting for a client connection")
 
     try:
-        (cs, client_ip_port)=s.accept()
+        (cs, client_ip_port) = s.accept()
 
     except KeyboardInterrupt:
         print("Server stopped by the user")
@@ -37,19 +37,19 @@ while True:
         exit()
 
     else:
-        number_connect +=1
+        number_connect += 1
         print("A client has connected to the server!")
         connections_list.append(client_ip_port)
-        print(f"CONNECTION {num_connections}. Client IP,PORT: {client_ip_port}")
-        #Read the message in bytes
+        print("CONNECTION ",  number_connect, ". Client IP,PORT: ", client_ip_port)
+        # Read the message in bytes
         msg_raw = cs.recv(2048)
 
         # decode to read it properly
         msg = msg_raw.decode()
 
-        #Print the received message
+        # Print the received message
         print("Message received: ", end="")
-        termcolor.cprint(msg, "green")
+        termcolor.cprint(msg, "yellow")
 
         # Send the response message to the client
         response = "ECHO: " + msg + "\n"
@@ -59,6 +59,6 @@ while True:
 
         print("The following clients has connected to the server: ")
         for i, c in enumerate(connections_list):
-            print(f"Client {i}: {c}")
+            print("Client",  i, ":", c)
 
         cs.close()

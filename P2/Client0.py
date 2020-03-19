@@ -2,14 +2,15 @@
 
 
 import socket
+import termcolor
 
 
-
+def ping():  # is function only prints ok
+    print("OK!")
 
 
 class Client:
-    def ping():  # is function only prints ok
-        print("OK")
+
     def __init__(self, ip, port):
         # function for initializing the object
         # strsbases: is a parameter, you can call wherever you want
@@ -17,7 +18,7 @@ class Client:
         self.port = port
 
     def __str__(self):  # it gives the internal info of the object
-        return f"Connection to SERVER at {self.ip} PORT: {self.port}"
+        return f"Connection to SERVER at {self.ip} , PORT: {self.port}"
 
     def talk(self, msg):
         # -- Create the socket
@@ -40,9 +41,8 @@ class Client:
         # Return the response
         return response
 
-    def debug_talk(self, response):  # response message from the server
+    def debug_talk(self, m_from_server):  # response message from the server
         m_from_server = self.talk(m_from_server)
-        m_from_client = self.talk(m_from_client)
         print("To Server: ")
         print("From Server: ", end="")
         termcolor.cprint(response, "blue")  # blue color

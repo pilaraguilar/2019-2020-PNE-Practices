@@ -1,32 +1,32 @@
 import socket
 import termcolor
 
-#create the socket
+# create the socket
 
-s=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-#to avoid a problem when a port is using
+# to avoid a problem when a port is using
 
 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
-IP= "127.0.0.1"
-PORT= 8080
+IP = "127.0.0.1"
+PORT = 8080
 
-#bind the socket to the servers ip and port
+# bind the socket to the servers ip and port
 
-s.bind((IP,PORT))
+s.bind((IP, PORT))
 
-#listen
+# listen
 s.listen()
 
 print("Server is configured")
 
 while True:
-    #waiting for a client
+    # waiting for a client
     print("Waiting for a client connection")
 
     try:
-        (cs, client_ip_port)=s.accept()
+        (cs, client_ip_port) = s.accept()
 
     except KeyboardInterrupt:
         print("Server stopped by the user")
@@ -37,13 +37,13 @@ while True:
     else:
         print("A client has connected to the server!")
 
-        #Read the message in bytes
+        # Read the message in bytes
         msg_raw = cs.recv(2048)
 
         # decode to read it properly
         msg = msg_raw.decode()
 
-        #Print the received message
+        # Print the received message
         print("Message received: ", end="")
         termcolor.cprint(msg, "green")
 
@@ -52,6 +52,5 @@ while True:
 
         # The message has to be in bytes
         cs.send(response.encode())
-
 
         cs.close()
