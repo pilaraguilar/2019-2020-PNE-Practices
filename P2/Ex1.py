@@ -1,4 +1,4 @@
-from Client0 import Client
+from Client0 import Client, ping
 
 PRACTICE = 2
 EXERCISE = 1

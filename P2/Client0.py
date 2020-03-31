@@ -5,7 +5,7 @@ import socket
 import termcolor
 
 
-def ping():  # is function only prints ok
+def ping():  # a function that only prints ok
     print("OK!")
 
 
@@ -13,7 +13,7 @@ class Client:
 
     def __init__(self, ip, port):
         # function for initializing the object
-        # strsbases: is a parameter, you can call wherever you want
+        # strsbases : is a parameter, you can call wherever you want
         self.ip = ip  # passed as an argument when creating the object
         self.port = port
 
@@ -32,9 +32,10 @@ class Client:
         # Send data.
         s.send(str.encode(msg))
 
+
         # Receive data
         response = s.recv(2048).decode("utf-8")
-
+      # blue color
         # Close the socket
         s.close()
 
@@ -43,8 +44,6 @@ class Client:
 
     def debug_talk(self, m_from_server):  # response message from the server
         m_from_server = self.talk(m_from_server)
-        print("To Server: ")
         print("From Server: ", end="")
-        termcolor.cprint(response, "blue")  # blue color
         termcolor.cprint(m_from_server, "green")
         return m_from_server

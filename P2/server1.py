@@ -19,7 +19,7 @@ while True:
 
     print("Message from the client: ", end="")
 
-    message = "\nHelloo\n"
+    message = "\nHelloo i'm the server\n"
     send_bytes = str.encode(message)
 
     # We must write bytes, not a string

@@ -79,3 +79,6 @@ class Seq:
                 es += e[b]
 
         return es
+
+    def seq_count_base(self, param):
+        pass
