@@ -137,9 +137,5 @@ while True:
             cs.send(seq.encode())
 
         else:
-
             True
-
-        # The message has to be in bytes
-
-        cs.close()
+            cs.close()

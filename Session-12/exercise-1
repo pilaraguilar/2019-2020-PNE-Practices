@@ -1,0 +1,7 @@
+1- Which is the request line? GET /hello HTTP/1.1
+   Which is the resource name that the client is asking for? (Path)
+
+2- Which is the request line? GET /favicon.ico HTTP/1.1
+   Which is the resource name that the client is asking for? (Path)
+
+3- Which is the request line? GET /hi/there?name=virus&type=corona HTTP/1.1
