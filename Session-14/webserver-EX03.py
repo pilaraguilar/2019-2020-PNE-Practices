@@ -5,7 +5,7 @@ from pathlib import Path
 
 
 # Define the Server's port
-PORT = 8080
+PORT = 8081
 
 # -- This is for preventing the error: "Port already in use"
 socketserver.TCPServer.allow_reuse_address = True
@@ -15,7 +15,7 @@ socketserver.TCPServer.allow_reuse_address = True
 # It means that our class inheritates all his methods and properties
 class TestHandler(http.server.BaseHTTPRequestHandler):
 
-    def do_get(self):
+    def do_GET(self):
         """This method is called whenever the client invokes the GET method
         in the HTTP protocol request"""
 
