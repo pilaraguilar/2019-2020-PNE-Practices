@@ -21,7 +21,7 @@ while True:
 
     print("Message from the client: ", end="")
 
-    message = "Hello"
+    message = "Hello i am Pilar Aguilar"
     send_bytes = str.encode(message)
 
     # We must write bytes, not a string
