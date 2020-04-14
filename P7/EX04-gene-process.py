@@ -45,18 +45,33 @@ termcolor.cprint("Bases: ", 'yellow', end="")
 print(gene['seq'])
 
 gen = gene['seq']
-seq = Seq(gen)
+s = Seq(gen)
 
-sl = s.len
+sl = s.len()
 counta = s.seq_count_bases ('A')
-porta = "{:.1f}".format(100 * counta / sl)
+porta = round((100 * counta / sl),2)
 countc = s.seq_count_bases ('C')
-portc = "{:.1f}".format(100 * countc / sl)
+portc = round((100 * countc / sl), 2)
 countg = s.seq_count_bases('G')
-portg = "{:.1f}".format(100 * countg / sl)
+portg = round((100 * countg / sl), 2)
 countt = s.seq_count_bases ('T')
-portt = "{:.1f}".format(100 * countt / sl)
+portt = round((100 * countt / sl), 2)
 
 termcolor.cprint("Total lenght: ", "yellow", end="")
 print(sl)
+termcolor.cprint("A: ", "blue", end="")
+print(counta, porta)
+termcolor.cprint("C: ", "blue", end="")
+print(countc, portc)
+termcolor.cprint("T: ", "blue", end="")
+print(countt, portt)
+termcolor.cprint("G: ", "blue", end="")
+print(countg, portg)
+BASES = ["A", "C", "G", "T"]
+
+
+
+
+
+
 
