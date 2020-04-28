@@ -5,10 +5,11 @@ gene = ["U5"]
 bases = ['A', 'C', 'T', 'G']
 
 
-print("-----| Exercise 6 |------")
+print("----| Exercise 6 |-----")
 print("Gene U5: ")
-for b in gene:
-    seq = seq_read_fasta(folder + b + e)[:20]
+for g in gene:
+    filename = folder + g + e
+    seq = seq_read_fasta(filename)[:20]
     reverse = seq_reverse(seq)
     print("Frag: ", seq)
     print("Rev: ", reverse)

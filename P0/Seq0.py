@@ -4,24 +4,23 @@ from pathlib import Path
 
 
 def seq_ping():
-    print("Testing the seq_ping() funcion", "\n", "OK")
+    print("Testing the seq_ping() function", "\n", "OK")
 
 # ex2
 
 
 def seq_read_fasta(filename):
-    #  read the text
+    # read the text
     content = Path(filename).read_text()
+    # find the line jumps
     space = content.find("\n")
-    #  remove the head
+    # starts in the second line
     content = content[space + 1:]
-    #  remove the black spaces
+    #  remove the white spaces
     content = content.replace("\n", "")
-
     return content
 
 # ex3
-
 
 def seq_len(filename):
     return len(filename)
@@ -30,13 +29,13 @@ def seq_len(filename):
 
 
 def seq_count_base(filename, b):
-    # counting the base on the sequence
+    # counting the bases on the sequence
     return filename.count(b)
 
 # ex5
 
 
-def count(sequence):
+def seq_count(sequence):
     # creating a dictionary with the number of each base
     bases = {'A': seq_count_base(sequence, 'A'), 'T': seq_count_base(sequence, 'T'),
              'C': seq_count_base(sequence, 'C'), 'G': seq_count_base(sequence, 'G')}
@@ -57,5 +56,7 @@ def seq_complement(sequence):
     c = {"A": "T", 'T': 'A', 'C': 'G', 'G': 'C'}
     r = ""
     for b in sequence:
-        r += c[b]
+        r = r + c[b]
     return r
+
+
