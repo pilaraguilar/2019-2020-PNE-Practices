@@ -5,10 +5,10 @@ print("-----| Practice 1, Exercise 5 |------")
 # null sequence
 s1 = Seq()
 
-# -- Create a valid sequence
+#  valid sequence
 s2 = Seq("ACTGA")
 
-# -- Create an invalid sequence
+#  invalid sequence
 s3 = Seq("Invalid sequence")
 
 for i, s in enumerate([s1, s2, s3]):
