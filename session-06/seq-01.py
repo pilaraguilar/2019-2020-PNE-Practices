@@ -16,12 +16,13 @@ class Seq:
     def __str__(self):
         return self.strbases
 
+    # calculating the lenght of the sequence
     def len(self):
         return len(self.strbases)
 
+
 # inherit all the methods of the bases
-
-
+# this object will have the same methods than Seq objects
 class Gene(Seq):
     pass
 

@@ -5,10 +5,10 @@ print("-----| Practice 1, Exercise 3 |------")
 # null sequence
 s1 = Seq()
 
-# -- Create a valid sequence
+# valid sequence
 s2 = Seq("ACTGA")
 
-# -- Create an invalid sequence
+#  invalid sequence
 s3 = Seq("Invalid sequence")
 
 print("Sequence 1: ", s1)

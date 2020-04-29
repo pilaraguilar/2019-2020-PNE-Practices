@@ -1,53 +1,40 @@
 from pathlib import Path  # for open a file
 
 
-def valid_str(strbases):  # self argument is always the first
-    valid_b = ["A", "C", "G", "T"]
-    for b in strbases:
-        if b not in valid_b:  # if there is any invalid base
-            return False
-    return True  # valid
-
-
 class Seq:
-    NULL = "NULL"
-    ERROR = "ERROR"
 
-    def __init__(self, strbases=NULL):  # function for initializing the object #strsbases: is a parameter, you can
+    def __init__(self, strbases="NULL"):  # function for initializing the object #strsbases: is a parameter, you can
         # call wherever you want
-        if strbases == self.NULL:
-            self.strbases = self.NULL
+        if strbases == "NULL":
+            self.strbases = "NULL"
             print("NULL sequence created")
-            return
+            self.lenght = 0
 
-        if not valid_str(strbases):
-            self.strbases = self.ERROR  # you have always have to put self to operate with an object
-            print("INVALID Seq!")
-            return
+        else:
+            ok = True
+            p = 0  # position in the sequence
 
-        # string in the object
-        self.strbases = strbases
-        print("New sequence created!")
+            while p < len(strbases) and ok:
+                if strbases[p] != "T" and strbases[p] != "C" and strbases[p] != "A" and strbases[p] != "G":
+                    self.strbases = "ERROR"
+                    self.length = 0
+                    ok = False
+                    print("INVALID Sequence")
+
+                else:
+                    p += 1
+
+            if ok and strbases != "NULL":
+                print("New sequence created!")
+                self.strbases = strbases
+                self.length = len(self.strbases)
 
     def __str__(self):  # it run each time something is print
         return self.strbases  # it gives the internal info of the object
 
     def len(self):
-        if self.strbases in [self.NULL, self.ERROR]:
-            return 0  # a 0 if it is null or invalid
-        else:
-            return len(self.strbases)
+        return len(self.strbases)
 
-    def seq_read_fasta(self, filename):
-        #  read the text
-        content = Path(filename).read_text()
-        # Remove the head
-        body = content.split('\n')[1:]
-
-        # Store the sequence
-        self.strbases = "".join(body)
-
-        return self
 
     def seq_count_bases(self, b):  # it applies to the dictionary,
         return self.strbases.count(b)
@@ -59,26 +46,34 @@ class Seq:
         return e
 
     def seq_reverse(self):
-        if self.strbases in [self.NULL]:
-            return "NULL"
-        elif self.strbases in [self.ERROR]:
-            return "ERROR"
-        else:
+        if self.strbases != "NULL" and self.strbases!= "ERROR":
             return self.strbases[::-1]
+        elif self.strbases == "NULL":
+            return "NULL"
+        elif self.strbases == "ERROR":
+            return "ERROR"
 
     def seq_complement(self):
         e = {"A": "T", 'T': 'A', 'C': 'G', 'G': 'C'}
         es = ""
-        if self.strbases in [self.NULL]:
-            return "NULL"
-        elif self.strbases in [self.ERROR]:
-            return "ERROR"
-        else:
-
+        if self.strbases != "NULL" and self.strbases!= "ERROR":
             for b in self.strbases:
                 es += e[b]
+        elif self.strbases == "NULL":
+            return "NULL"
+        elif self.strbases == "ERROR":
+            return "ERROR"
 
         return es
 
+    def seq_read_fasta(self, filename):
+        #  read the text
+        content = Path(filename).read_text()
+        # Remove the head
+        body = content.split('\n')[1:]
+        # Store the sequence
+        self.strbases = "".join(body)
+
+        return self
     def seq_count_base(self, param):
         pass

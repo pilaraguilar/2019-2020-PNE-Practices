@@ -11,5 +11,5 @@ for g in genes:
     se = Seq().seq_read_fasta(folder + g + e)
     dictionary = se.count()
     lit = list(dictionary.values())  # creating a list with the value at the dictionary
-    most_common = max(lit)  # calculating the "maximun" that is the base that repited more times
+    most_common = max(lit)  # calculating the "maximum" that is the base that repited more times
     print("Gene ", g, ": Most frequent Base:", bases[lit.index(most_common)])

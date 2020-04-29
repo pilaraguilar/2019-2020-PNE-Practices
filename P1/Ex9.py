@@ -6,10 +6,10 @@ print("-----| Practice 1, Exercise 9 |------")
 FOLDER = "../Session-04/"
 EXT = ".txt"
 GENES = ["U5", "ADA", "FRAT1", "FXN", "RNU6_269P"]
-# -- Create a Null sequence
+# Null sequence
 s = Seq()
 
-# -- Initialize the null seq with the given file in fasta format
+# in fasta format
 s.seq_read_fasta(FOLDER + GENES[0] + EXT)
 
 print("Sequence: ", " (Lenght:", s.len(), ")", s)

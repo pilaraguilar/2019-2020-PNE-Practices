@@ -1,13 +1,14 @@
 from Seq1 import Seq
 print("-----| Practice 1, Exercise 4 |------")
 #we are creating sequences passing a string with the bases to an object
+
 #null sequence
 s1 = Seq()
 
-# -- Create a valid sequence
+# valid sequence
 s2 = Seq("ACTGA")
 
-# -- Create an invalid sequence
+# invalid sequence
 s3 = Seq("Invalid sequence")
 
 
