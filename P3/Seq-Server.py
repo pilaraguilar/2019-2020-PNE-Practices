@@ -8,12 +8,12 @@ import termcolor
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-# to avoid a problem when a port is using
+# to avoid a problem when a port is used
 
 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
 IP = "127.0.0.1"
-PORT = 8081
+PORT = 8085
 
 # bind the socket to the servers ip and port
 
@@ -53,10 +53,12 @@ while True:
 
         li = msg.split(" ")
 
+        # prints ok
         if li[0] == "PING":
             termcolor.cprint("PING command", 'green')
             print("OK!\n")
 
+        # prints a sequence
         elif li[0] == "GET":
             termcolor.cprint("GET", 'green')
 
@@ -85,6 +87,7 @@ while True:
                 response = s4
                 cs.send(response.encode())
 
+        # prints the info of the sequence
         elif li[0] == "INFO":
             termcolor.cprint("INFO", 'green')
 
@@ -107,12 +110,13 @@ while True:
 
             response = f"""Sequence: {sequence}
             Total length: {sequence.len()}
-            A: {counta} ({round(porta,2)}%)
-            C: {countc} ({round(portc,2)}%)
-            G: {countg} ({round(portg,2)}%)
-            T: {countt} ({round(portt,2)}%)"""
+            A: {counta} ({round(porta, 2)}%)
+            C: {countc} ({round(portc, 2)}%)
+            G: {countg} ({round(portg, 2)}%)
+            T: {countt} ({round(portt, 2)}%)"""
             cs.send(response.encode())
 
+    # prints the seq complement
         elif li[0] == "COMP":
             termcolor.cprint("COMP", 'green')
             sequence = Seq(li[1])
@@ -120,13 +124,14 @@ while True:
             print(comp)
             cs.send(comp.encode())
 
-
+        # returns the reverse
         elif li[0] == "REV":
             termcolor.cprint("REV", 'green')
             sequence = Seq(li[1])
             rev = sequence.seq_reverse()
             cs.send(rev.encode())
 
+        # returns the seq of the gene
         elif li[0] == "GENE":
             termcolor.cprint("GENE", 'green')
             gene = li[1]
@@ -137,5 +142,7 @@ while True:
             cs.send(seq.encode())
 
         else:
-            True
+            print ("Enter a valid statement")
+            False
             cs.close()
+

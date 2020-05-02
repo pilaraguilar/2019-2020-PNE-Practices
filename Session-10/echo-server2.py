@@ -9,7 +9,7 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
 IP = "127.0.0.1"  # this number says that the ip is the one of my computer, using it in different computers
-PORT = 8080
+PORT = 8082
 
 number_connect = 0
 # bind the socket to the servers ip and port
@@ -38,7 +38,7 @@ while True:
         number_connect += 1
         print("A client has connected to the server!")
 
-        print("CONNECTION ", number_connect, ". Client IP,PORT: " , client_ip_port)
+        print("CONNECTION ", number_connect, ". Client IP,PORT: ", client_ip_port)
         # Read the message in bytes
         msg_raw = cs.recv(2048)
 

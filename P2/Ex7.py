@@ -37,7 +37,7 @@ initial_msg = f"Sending {GENE} Gene to the server, in fragments of {LENGTH} base
 c1.talk(initial_msg)
 c2.talk(initial_msg)
 
-# Create the framents
+# Create the fragments
 # sending them to the servers
 for i in range(10):
 

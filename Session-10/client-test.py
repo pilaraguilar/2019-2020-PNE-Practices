@@ -1,6 +1,6 @@
 from Client0 import Client
 
-PORT = 8080
+PORT = 8084
 IP = "127.0.0.1"
 
 for number in range(5):
