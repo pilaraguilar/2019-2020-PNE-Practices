@@ -3,7 +3,7 @@ import termcolor
 from pathlib import Path
 
 
-# -- Server network parameters
+# Server network parameters
 IP = "127.0.0.1"
 PORT = 8080
 
@@ -18,7 +18,7 @@ def get_re(path):
 
 
 def process_client(s):
-    # -- Receive the request message
+    #  Receive the request message
     req_raw = s.recv(2000)
     req = req_raw.decode()
 
