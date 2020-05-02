@@ -4,7 +4,7 @@ import termcolor
 
 # -- Server network parameters
 IP = "127.0.0.1"
-PORT = 8081
+PORT = 8082
 
 
 def process_client(s):
