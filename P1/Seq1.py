@@ -73,7 +73,7 @@ class Seq:
         body = content.split('\n')[1:]
         # Store the sequence
         self.strbases = "".join(body)
-
         return self
+
     def seq_count_base(self, param):
         pass

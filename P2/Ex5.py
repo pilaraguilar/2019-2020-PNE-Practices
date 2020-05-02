@@ -4,7 +4,7 @@ from Seq1 import Seq
 PRACTICE = 2
 EXERCISE = 5
 
-print(f"-----| Practice {PRACTICE}, Exercise {EXERCISE} |------")
+print("-----| Practice ", PRACTICE, "Exercise", EXERCISE, "|------")
 
 IP = "127.0.0.1"
 PORT = 8080
@@ -12,6 +12,7 @@ PORT = 8080
 FOLDER = "../Session-04/"
 EXT = ".txt"
 GENE = "U5"
+filename = FOLDER + GENE + EXT
 
 # Create a client object
 c = Client(IP, PORT)
@@ -20,8 +21,8 @@ c = Client(IP, PORT)
 print(c)
 
 # Read the Gene from a file
-s = Seq().seq_read_fasta(FOLDER + GENE + EXT)
+s = Seq().seq_read_fasta(filename)
 
 # Sending
-c.debug_talk(f"Sending {GENE} Gene to the server...")
+c.debug_talk("Sending " + GENE + " Gene to the server...")
 c.debug_talk(str(s))

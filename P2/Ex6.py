@@ -4,14 +4,15 @@ from Seq1 import Seq
 PRACTICE = 2
 EXERCISE = 6
 
-print(f"-----| Practice {PRACTICE}, Exercise {EXERCISE} |------")
+print("-----| Practice ", PRACTICE, "Exercise", EXERCISE, "|------")
 
-IP = "192.168.1.43"
+IP = "127.0.0.1"
 PORT = 8080
 
 FOLDER = "../Session-04/"
 EXT = ".txt"
 GENE = "FRAT1"
+filename = FOLDER + GENE + EXT
 
 # Create a client object
 c = Client(IP, PORT)
@@ -20,10 +21,10 @@ c = Client(IP, PORT)
 print(c)
 
 # Read the Gene from a file
-s = Seq().seq_read_fasta(FOLDER + GENE + EXT)
+s = Seq().seq_read_fasta(filename)
+
 
 # get the string
-
 bases = str(s)
 
 lenght = 10
@@ -36,5 +37,5 @@ for i in range(5):
     # Print on Client's console
     print(f"Fragment {i + 1}: {fragment}")
 
-    # Send the fragment to the server!
+    # Send the fragment to the server
     c.talk(f"Fragment {i + 1}: {fragment}")
