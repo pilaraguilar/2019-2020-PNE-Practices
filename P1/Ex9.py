@@ -5,7 +5,7 @@ print("-----| Practice 1, Exercise 9 |------")
 
 FOLDER = "../Session-04/"
 EXT = ".txt"
-GENES = ["U5", "ADA", "FRAT1", "FXN", "RNU6_269P"]
+GENES = ["U5", "ADA", "FRAT1", "FXN", "RNU6_269P.txt"]
 # Null sequence
 s = Seq()
 

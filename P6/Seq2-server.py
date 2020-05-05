@@ -5,18 +5,16 @@ from pathlib import Path
 import http.server
 
 # Define the Server's port
-PORT = 8089
+PORT = 8001
 
 # -- This is for preventing the error: "Port already in use"
 socketserver.TCPServer.allow_reuse_address = True
 
-SEQ_GET = [
-    "ACTGATCTAGAAAACTCGATCA",
+seq_list = ["ACTGATCTAGAAAACTCGATCA",
     "ATGACTAGATTATACTGGATTC",
     "GCTAGCTAGCTTATATACGTAT",
     "TAGCTTAGTTACGATCAGTAGA",
-    "ATGTAGCTTAGTCAGTACATGA",
-]
+    "ATGTAGCTTAGTCAGTACATGA"]
 
 FOLDER = "../session-04/"
 EXT = ".txt"
@@ -24,36 +22,36 @@ EXT = ".txt"
 
 # Class with our Handler. It is a called derived from BaseHTTPRequestHandler
 # It means that our class inheritates all his methods and properties
-class TestHandler (http.server.BaseHTTPRequestHandler):
+class TestHandler(http.server.BaseHTTPRequestHandler):
 
     def do_GET(self):
         """This method is called whenever the client invokes the GET method
         in the HTTP protocol request"""
 
         # Print the request line
-        termcolor.cprint (self.requestline, 'green')
+        termcolor.cprint(self.requestline, 'green')
 
         # Analize the request line
-        req_line = self.requestline.split (' ')
+        req_line = self.requestline.split(' ')
 
         # Get the path. It always start with the / symbol
         path = req_line[1]
 
         # Read the arguments
-        arguments = path.split ('?')
+        arguments = path.split('?')
 
         # Get the verb. It is the first argument
         verb = arguments[0]
 
         # -- Content type header
         # -- Both, the error and the main page are in HTML
-        contents = Path ('Error.html').read_text ()
+        contents = Path('Error.html').read_text()
         error_code = 404
 
         if verb == "/":
             # Open the form1.html file
             # Read the index from the file
-            contents = Path ('form-4.html').read_text ()
+            contents = Path('form-4.html').read_text()
             error_code = 200
         elif verb == "/ping":
             contents = """
@@ -75,13 +73,13 @@ class TestHandler (http.server.BaseHTTPRequestHandler):
             # the right of the ? symbol
             pair = arguments[1]
             #  name = value
-            pairs = pair.split ('&')
+            pairs = pair.split('&')
             #  name and value
-            name, value = pairs[0].split ("=")
-            n = int (value)
+            name, value = pairs[0].split("=")
+            n = int(value)
 
             # Get the sequence
-            seq = SEQ_GET[n]
+            seq = seq_list[n]
 
             contents = f"""
                         <!DOCTYPE html>
@@ -102,13 +100,13 @@ class TestHandler (http.server.BaseHTTPRequestHandler):
             #  right of the ? symbol
             pair = arguments[1]
             #  name = value
-            pairs = pair.split ('&')
+            pairs = pair.split('&')
             #  name and value
-            name, gene = pairs[0].split ("=")
+            name, gene = pairs[0].split("=")
 
-            s = Seq ()
-            s.seq_read_fasta (FOLDER + gene + EXT)
-            gene_str = str (s)
+            s = Seq()
+            s.seq_read_fasta(FOLDER + gene + EXT)
+            gene_str = str(s)
 
             contents = f"""
                         <!DOCTYPE html>
@@ -119,7 +117,7 @@ class TestHandler (http.server.BaseHTTPRequestHandler):
                         </head >
                         <body>
                         <h2> Gene: {gene}</h2>
-                        <textarea readonly rows="20" cols="80"> {gene_str} </textarea>
+                        <textarea readonly rows="60" cols="80"> {gene_str} </textarea>
                         <br>
                         <br>
                         <a href="/">Main page</a>
@@ -131,28 +129,31 @@ class TestHandler (http.server.BaseHTTPRequestHandler):
             #  the right of the ? symbol
             pair = arguments[1]
             #  name = value
-            pairs = pair.split ('&')
+            pairs = pair.split('&')
             #  name and value
-            name, seq = pairs[0].split ("=")
+            name, seq = pairs[0].split("=")
             #  elements of the operation
-            name, op = pairs[1].split ("=")
+            name, op = pairs[1].split("=")
 
-            s = Seq (seq)
+            s = Seq(seq)
 
             if op == "comp":
-                result = s.seq_complement ()
+                result = s.seq_complement()
+                op = "complementary"
             elif op == "rev":
-                result = s.seq_reverse ()
+                result = s.seq_reverse()
+                op = "reverse"
             else:
-                sl = s.len ()
-                counta = s.seq_count_bases ('A')
-                porta = "{:.1f}".format (100 * counta / sl)
-                countc = s.seq_count_bases ('C')
-                portc = "{:.1f}".format (100 * countc / sl)
-                countg = s.seq_count_bases ('G')
-                portg = "{:.1f}".format (100 * countg / sl)
-                countt = s.seq_count_bases ('T')
-                portt = "{:.1f}".format (100 * countt / sl)
+                op = "information"
+                sl = s.len()
+                counta = s.seq_count_bases('A')
+                porta = "{:.1f}".format(100 * counta / sl)
+                countc = s.seq_count_bases('C')
+                portc = "{:.1f}".format(100 * countc / sl)
+                countg = s.seq_count_bases('G')
+                portg = "{:.1f}".format(100 * countg / sl)
+                countt = s.seq_count_bases('T')
+                portt = "{:.1f}".format(100 * countt / sl)
 
                 result = f"""
                 <p>Total length: {sl}</p>
@@ -184,17 +185,17 @@ class TestHandler (http.server.BaseHTTPRequestHandler):
             error_code = 200
 
         # Generating the response message
-        self.send_response (error_code)  # -- Status line: OK!
+        self.send_response(error_code)  # -- Status line: OK!
 
         # Define the content-type header:
-        self.send_header ('Content-Type', 'text/html')
-        self.send_header ('Content-Length', len (str.encode (contents)))
+        self.send_header('Content-Type', 'text/html')
+        self.send_header('Content-Length', len(str.encode(contents)))
 
         # The header is finished
-        self.end_headers ()
+        self.end_headers()
 
         # Send the response message
-        self.wfile.write (str.encode (contents))
+        self.wfile.write(str.encode(contents))
 
         return
 
@@ -206,14 +207,14 @@ class TestHandler (http.server.BaseHTTPRequestHandler):
 Handler = TestHandler
 
 # -- Open the socket server
-with socketserver.TCPServer (("", PORT), Handler) as httpd:
-    print ("Serving at PORT", PORT)
+with socketserver.TCPServer(("", PORT), Handler) as httpd:
+    print("Serving at PORT", PORT)
 
     # -- Main loop: Attend the client. Whenever there is a new
     # -- clint, the handler is called
     try:
-        httpd.serve_forever ()
+        httpd.serve_forever()
     except KeyboardInterrupt:
-        print ("")
-        print ("Stoped by the user")
-        httpd.server_close ()
+        print("")
+        print("Stoped by the user")
+        httpd.server_close()
