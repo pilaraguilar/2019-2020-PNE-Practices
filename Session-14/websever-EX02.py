@@ -4,7 +4,7 @@ import termcolor
 from pathlib import Path
 
 # Define the Server's port
-PORT = 8081
+PORT = 8089
 
 # -- This is for preventing the error: "Port already in use"
 socketserver.TCPServer.allow_reuse_address = True
@@ -37,6 +37,9 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
         # -- Both, the error and the main page are in plain text in this examples
         content_type = 'text/html'
 
+        status = 0
+        contents = ""
+
         if path == "":
             path = "index.html"
 
@@ -44,7 +47,7 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
         elif path == "index.html":
             termcolor.cprint("Main page requested", 'blue')
 
-            # Message to send back to the clinet
+            # Message to send back to the client
             contents = Path(path).read_text()
 
             # Status code is ok
@@ -53,7 +56,7 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
             # -- Resource NOT FOUND
             termcolor.cprint("ERROR: Not found", 'red')
 
-            # Message to send back to the clinet
+            # Message to send back to the client
             contents = Path("Error.html").read_text()
 
             # Status code is NOT FOUND
@@ -91,5 +94,5 @@ with socketserver.TCPServer(("", PORT), Handler) as httpd:
         httpd.serve_forever()
     except KeyboardInterrupt:
         print("")
-        print("Stoped by the user")
+        print("Stopped by the user")
         httpd.server_close()

@@ -2,6 +2,10 @@ import http.server
 import socketserver
 import termcolor
 
+
+# Generating the response message
+# Getting info from the request message
+
 # Define the Server's port
 PORT = 8082
 

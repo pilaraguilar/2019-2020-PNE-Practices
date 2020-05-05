@@ -32,8 +32,6 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
         # If this string is blank "", it means the main page
         path = path[1:]
 
-        # -- Content type header
-        # -- Both, the error and the main page are in HTML
         content_type = 'text/html'
 
         print(path)
@@ -41,27 +39,31 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
         if path == "":
             path = "index.html"
 
-        elif path == "info/C":
+        elif path == "/":
+            path = "index.html"
+
+
+        elif path == "info/C.html":
             path = "C.html"
 
-        elif path == "info/A":
+        elif path == "info/A.html":
             path = "A.html"
 
-        elif path == "info/T":
+        elif path == "info/T.html":
             path = "T.html"
 
-        elif path == "info/G":
+        elif path == "info/G.html":
             path = "G.html"
 
 
-        # -- Read the resource as a file
+
+        # Read the resource as a file
         try:
             contents = Path(path).read_text()
             status = 200
+
         except FileNotFoundError:
             contents = Path("Error.html").read_text()
-
-            # NOT FOUND
             status = 404
 
         # Generating the response message
@@ -97,5 +99,5 @@ with socketserver.TCPServer(("", PORT), Handler) as httpd:
         httpd.serve_forever()
     except KeyboardInterrupt:
         print("")
-        print("Stoped by the user")
+        print("Stopped by the user")
         httpd.server_close()

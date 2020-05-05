@@ -32,11 +32,11 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
         self.send_response(200)  # -- Status line: OK!  #creates a response header
 
         # Define the content-type header:
-        self.send_header('Content-Type', 'text/plain') # add a header
+        self.send_header('Content-Type', 'text/plain')  # add a header
         self.send_header('Content-Length', len(contents.encode()))
 
         # The header is finished
-        self.end_headers() # add a blank line
+        self.end_headers()  # add a blank line
 
         # Send the response message
         self.wfile.write(contents.encode())
@@ -52,7 +52,6 @@ Handler = TestHandler
 
 # -- Open the socket server
 with socketserver.TCPServer(("", PORT), Handler) as httpd:
-
     print("Serving at PORT", PORT)
 
     # -- Main loop: Attend the client. Whenever there is a new

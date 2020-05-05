@@ -3,7 +3,7 @@ import socketserver
 import termcolor
 
 # Define the Server's port
-PORT = 8081
+PORT = 8084
 
 # -- This is for preventing the error: "Port already in use"
 socketserver.TCPServer.allow_reuse_address = True
@@ -28,7 +28,7 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
 
         # It contains the resource name without the / symbol
         # If this string is blank "", it means the main page
-        path = path[1:] # since the second line
+        path = path[1:]  # since the second line
 
         # -- Variable for sending the response back
         contents = ""
@@ -44,7 +44,7 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
         if path == "":
             termcolor.cprint("Main page requested", 'blue')
 
-            # Message to send back to the clinet
+            # Message to send back to the client
             contents = "Welcome to my server"
 
             # Status code is ok
@@ -83,7 +83,6 @@ Handler = TestHandler
 
 # -- Open the socket server
 with socketserver.TCPServer(("", PORT), Handler) as httpd:
-
     print("Serving at PORT", PORT)
 
     # -- Main loop: Attend the client. Whenever there is a new
@@ -92,5 +91,5 @@ with socketserver.TCPServer(("", PORT), Handler) as httpd:
         httpd.serve_forever()
     except KeyboardInterrupt:
         print("")
-        print("Stoped by the user")
+        print("Stopped by the user")
         httpd.server_close()
