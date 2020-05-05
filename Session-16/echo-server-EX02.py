@@ -6,7 +6,6 @@ from pathlib import Path
 # Define the Server's port
 PORT = 8088
 
-
 # -- This is for preventing the error: "Port already in use"
 socketserver.TCPServer.allow_reuse_address = True
 
@@ -52,13 +51,12 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
             # -- Get all the pairs name = value
             pairs = pair.split('&')
             # -- Get the two elements: name and value
-            name, value = pairs[0].split ("=")
-
+            name, value = pairs[0].split("=")
 
             check = ""
-            if len(pairs) >1:
-                c, check = pairs[1].split("=")
-                if c =="chk":
+            if len(pairs) > 1:
+                c = pairs[1].split("=")
+                if c == "chk":
                     value = value.upper()
             # -- Generate the html code
             contents = """
@@ -100,7 +98,6 @@ Handler = TestHandler
 
 # -- Open the socket server
 with socketserver.TCPServer(("", PORT), Handler) as httpd:
-
     print("Serving at PORT", PORT)
 
     # -- Main loop: Attend the client. Whenever there is a new

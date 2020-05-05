@@ -3,7 +3,6 @@ import socketserver
 import termcolor
 from pathlib import Path
 
-
 # Define the Server's port
 PORT = 8080
 
@@ -43,19 +42,17 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
             path = "index.html"
 
 
-        elif path == "info/C.html":
+        elif path == "info/C.html" or path == "info/C":
             path = "C.html"
 
-        elif path == "info/A.html":
+        elif path == "info/A.html" or path == "info/A":
             path = "A.html"
 
-        elif path == "info/T.html":
+        elif path == "info/T.html" or path == "info/T":
             path = "T.html"
 
-        elif path == "info/G.html":
+        elif path == "info/G.html" or path == "info/G":
             path = "G.html"
-
-
 
         # Read the resource as a file
         try:
@@ -90,7 +87,6 @@ Handler = TestHandler
 
 # -- Open the socket server
 with socketserver.TCPServer(("", PORT), Handler) as httpd:
-
     print("Serving at PORT", PORT)
 
     # -- Main loop: Attend the client. Whenever there is a new
