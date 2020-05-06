@@ -6,10 +6,13 @@ from Seq1 import Seq
 valid = False
 while not valid:
     try:
-        GENES = {'FRAT1': 'ENSG00000165879', 'ADA': 'ENSG00000196839', 'FXN': 'ENSG00000165060', 'RNU6_269P.txt': 'ENSG00000212379', 'MIR633': 'ENSG00000207552', 'TTTY4C': 'ENSG00000228296', 'RBMY2YP': 'ENSG00000227633', 'FGFR3': 'ENSG00000068078', 'KDR': 'ENSG00000128052', 'ANK2': 'ENSG00000145362',}
+        GENES = {'FRAT1': 'ENSG00000165879', 'ADA': 'ENSG00000196839', 'FXN': 'ENSG00000165060',
+                 'RNU6_269P': 'ENSG00000212379', 'MIR633': 'ENSG00000207552', 'TTTY4C': 'ENSG00000228296',
+                 'RBMY2YP': 'ENSG00000227633', 'FGFR3': 'ENSG00000068078', 'KDR': 'ENSG00000128052',
+                 'ANK2': 'ENSG00000145362' }
 
         GENENAME = input("Write the gene name:")
-        valid = True
+
         SERVER = 'rest.ensembl.org'
         ENDPOINT = '/sequence/id/'
         PARAMS = '?content-type=application/json'
@@ -28,10 +31,10 @@ while not valid:
             print("ERROR! Cannot connect to the Server")
             exit()
 
-        # -- Read the response message from the server
+        # Read the response message from the server
         r1 = conn.getresponse()
 
-        # -- Print the status line
+        # Print the status line
         print(f"Response received!: {r1.status} {r1.reason}\n")
 
         # Read the response's body
@@ -51,13 +54,13 @@ while not valid:
         s = Seq(gen)
 
         sl = s.len()
-        counta = s.seq_count_bases ('A')
-        porta = round((100 * counta / sl),2)
-        countc = s.seq_count_bases ('C')
+        counta = s.seq_count_bases('A')
+        porta = round((100 * counta / sl), 2)
+        countc = s.seq_count_bases('C')
         portc = round((100 * countc / sl), 2)
         countg = s.seq_count_bases('G')
         portg = round((100 * countg / sl), 2)
-        countt = s.seq_count_bases ('T')
+        countt = s.seq_count_bases('T')
         portt = round((100 * countt / sl), 2)
 
         termcolor.cprint("Total lenght: ", "yellow", end="")
@@ -72,28 +75,23 @@ while not valid:
         print(countg, ",", portg, "%")
         BASES = ["A", "C", "G", "T"]
 
-        if counta >= countt and countc and countg:
+        if counta > countt and counta > countt and counta > countg:
             termcolor.cprint("Most frequent base: ", "yellow", end="")
             print("A")
 
-        elif countc >= countt and counta and countg:
+        elif countc > countt and countc > counta and countc > countg:
             termcolor.cprint("Most frequent base: ", "yellow", end="")
             print("C")
 
-        elif countg >= countt and countc and counta:
+        elif countg > countt and countg > counta and countg > countc:
             termcolor.cprint("Most frequent base: ", "yellow", end="")
             print("G")
 
         else:
             termcolor.cprint("Most frequent base: ", "yellow", end="")
             print("T")
-
+        valid = True
 
     except KeyError:
         print("Enter a valid gene name please")
         valid = False
-
-
-
-
-

@@ -26,10 +26,10 @@ for gene in GENES:
         print("ERROR! Cannot connect to the Server")
         exit()
 
-    # -- Read the response message from the server
+    # response message from the server
     r1 = conn.getresponse()
 
-    # -- Print the status line
+    # status line
     print(f"Response received!: {r1.status} {r1.reason}\n")
 
     # Read the response's body
@@ -70,18 +70,21 @@ for gene in GENES:
     print(countg, ",", portg, "%")
     BASES = ["A", "C", "G", "T"]
 
-    if counta >= countt and countc and countg:
+
+    if counta > countt and counta > countt and counta > countg:
         termcolor.cprint("Most frequent base: ", "yellow", end="")
         print("A")
 
-    elif countc >= countt and counta and countg:
+    elif countc > countt and countc > counta and countc > countg:
         termcolor.cprint("Most frequent base: ", "yellow", end="")
         print("C")
 
-    elif countg >= countt and countc and counta:
+    elif countg > countt and countg > counta and countg > countc:
         termcolor.cprint("Most frequent base: ", "yellow", end="")
         print("G")
 
     else:
         termcolor.cprint("Most frequent base: ", "yellow", end="")
         print("T")
+    valid = True
+
