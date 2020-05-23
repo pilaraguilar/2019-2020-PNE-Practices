@@ -1,0 +1,285 @@
+In this report I run my basic server for the final Project:
+
+----- Index-------
+* TEST 1
+Input: http://127.0.0.1:8080/
+Output: 
+<!DOCTYPE html><html lang="en" dir="ltr"><head> <meta charset="UTF-8"> <title>INDEX</title></head><body style="background-color: #F6D8FF;">
+<h1 align = "center"><FONT face = "Courier New" >Browsing Human and Vertebrates genome </FONT></h1><h2 align="center"><FONT face = "Courier New">Basic level services</FONT></h2> <hr>
+<form action="/listSpecies" method="get"> <h3><b><FONT face = "Courier New" >List of species</FONT></b></h3> <p><FONT face = "Courier New">Choose a limit, from 1 to 286. </FONT></p> <p><FONT face = "Courier New">Limit: <input type="number" name="limit" min="1" max="286"></FONT><br> <br> <input value="SEND" type="submit"/> <hr> </form><form action="/karyotype" method="get"> <h3><b><FONT face = "Courier New" >Karyotype </FONT></b></h3> <p><FONT face = "Courier New">Select a specie: <input type="text" name="specie" ></FONT><br> <br> <input value="SEND" type="submit"/> <hr> </form><form action="/chromosomeLenght" method="get"> <h3><b><FONT face = "Courier New" >Chromosome Lenght </FONT></b></h3> <p><FONT face = "Courier New">Select a specie: <input type="text" name="specie" ></FONT><br> <p><FONT face = "Courier New">Select a chromosome: <input type="text" name="chromosome" ></FONT><br> <br> <input value="SEND" type="submit"/> <hr> </form></body></html>
+
+* TEST 2
+Input: http://127.0.0.1:8080/index.html
+Output: 
+<!DOCTYPE html><html lang="en" dir="ltr"><head> <meta charset="UTF-8"> <title>INDEX</title></head><body style="background-color: #F6D8FF;">
+<h1 align = "center"><FONT face = "Courier New" >Browsing Human and Vertebrates genome </FONT></h1><h2 align="center"><FONT face = "Courier New">Basic level services</FONT></h2> <hr>
+<form action="/listSpecies" method="get"> <h3><b><FONT face = "Courier New" >List of species</FONT></b></h3> <p><FONT face = "Courier New">Choose a limit, from 1 to 286. </FONT></p> <p><FONT face = "Courier New">Limit: <input type="number" name="limit" min="1" max="286"></FONT><br> <br> <input value="SEND" type="submit"/> <hr> </form><form action="/karyotype" method="get"> <h3><b><FONT face = "Courier New" >Karyotype </FONT></b></h3> <p><FONT face = "Courier New">Select a specie: <input type="text" name="specie" ></FONT><br> <br> <input value="SEND" type="submit"/> <hr> </form><form action="/chromosomeLenght" method="get"> <h3><b><FONT face = "Courier New" >Chromosome Lenght </FONT></b></h3> <p><FONT face = "Courier New">Select a specie: <input type="text" name="specie" ></FONT><br> <p><FONT face = "Courier New">Select a chromosome: <input type="text" name="chromosome" ></FONT><br> <br> <input value="SEND" type="submit"/> <hr> </form></body></html>
+
+* TEST 3 (If the path is wrong)
+Input: http://127.0.0.1:8080/wrong
+Output: 
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	<meta charset="UTF-8">
+	<title>Error</title>
+	</head>
+	<body style="background-color: #FE2E2E;">
+	<h1>ERROR</h1>
+	<a href="/">Main page</a>
+	<hr>
+	<p>Resource not available</p>
+	<h1></h1>
+	</body>
+	</html>
+
+
+---------- List of species --------
+* TEST1 (Test the case that a limit is chosen)
+ Input: http://127.0.0.1:8080/listSpecies?limit=23
+ Output:
+ <!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <title>Species List</title> </head> <body style="background-color: #F6D8FF;"> <h1><b><FONT face = "Courier New">List of species</FONT></b></h1> <a href="/"> Main page </a> <hr> <p>The total number of species in the ensembl is: 286 <p> <p>You have selected the limit: 23 <p> <p>The names of the species are: <P> <ol> <li>pig</li><li>American pika</li><li>African ostrich</li><li>Nile tilapia</li><li>channel catfish</li><li>West African mud turtle</li><li>channel bull blenny</li><li>Sooty mangabey</li><li>bottlenosed dolphin</li><li>naked mole-rat</li><li>brown trout</li><li>eastern brown snake</li><li>south eastern house mouse</li><li>spiny chromis</li><li>Western Lowland Gorilla</li><li>silver-eye</li><li>Hoffmann's two-fingered sloth</li><li>Eurasian sparrowhawk</li><li>house mouse</li><li>sailfin molly</li><li>greater bamboo lemur</li><li>mangrove rivulus</li><li>platypus</li></ol></body></html> </ol> </body> </html>
+
+* TEST2 (Test the case that a limit is not chosen, all species are printed)
+ Input http://127.0.0.1:8080/listSpecies?limit=
+  Output:
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <title>Species List</title> </head> <body style="background-color: #F6D8FF;"> <h1><b><FONT face = "Courier New">List of species</FONT></b></h1> <a href="/"> Main page </a> <hr> <p>The total number of species in the ensembl is: 286 <p> <p>You have not selected a limit <p> <p>The names of the species are: <P> <ol> <li>mainland tiger snake</li><li>birds</li><li>red fox</li><li>sperm whale</li><li>Great spotted kiwi</li><li>pinecone soldierfish</li><li>greater bamboo lemur</li><li>Kakapo</li><li>sea lamprey</li><li>Gouldian finch</li><li>electric eel</li><li>Okarito brown kiwi</li><li>large yellow croaker</li><li>channel bull blenny</li><li>house mouse</li><li>zebrafish</li><li>common carp huanghe</li><li>house mouse</li><li>pig</li><li>horned golden-line barbel</li><li>northern tree shrew</li><li>white-tufted-ear marmoset</li><li>Spotted gar</li><li>Tiger</li><li>Goat</li><li>central bearded dragon</li><li>naked mole-rat</li><li>American black bear</li><li>spotted green pufferfish</li><li>meerkat</li><li>steppe mouse</li><li>lyretail cichlid</li><li>mangrove rivulus</li><li>Western Lowland Gorilla</li><li>Domestic sheep</li><li>bicolor damselfish</li><li>coelacanth</li><li>Midas cichlid</li><li>Ma's night monkey</li><li>Pachon cavefish</li><li>common wombat</li><li>blue-ringed sea krait</li><li>gilthead seabream</li><li>Indian peafowl</li><li>Pig-tailed macaque</li><li>American beaver</li><li>pig</li><li>common mallard</li><li>Shrew mouse</li><li>western mosquitofish</li><li>Agassiz's desert tortoise</li><li>helmeted guineafowl</li><li>Amazon molly</li><li>Chinese hamster</li><li>Bornean orangutan</li><li>Olive baboon</li><li>orbiculate cardinalfish</li><li>zebra mbuna</li><li>African savanna elephant</li><li>American mink</li><li>domestic guinea pig</li><li>platypus</li><li>White-headed capuchin</li><li>golden-collared manakin</li><li>Three-toed box turtle</li><li>vole</li><li>tropical clawed frog</li><li>common carp</li><li>blue tilapia</li><li>Collared flycatcher</li><li>pig</li><li>Spoon-billed sandpiper</li><li>African ostrich</li><li>Periophthalmus magnuspinnatus</li><li>Chinese softshell turtle</li><li>Asiatic black bear</li><li>reedfish</li><li>Philippine tarsier</li><li>clown anemonefish</li><li>huchen</li><li>horse</li><li>pig</li><li>Chinese hamster</li><li>house mouse</li><li>Mexican tetra</li><li>small Madagascar hedgehog</li><li>jewelled blenny</li><li>tongue sole</li><li>house mouse</li><li>leopard</li><li>live sharksucker</li><li>Great Tit</li><li>northern pike</li><li>yellowtail amberjack</li><li>ruff</li><li>alpaca</li><li>gray mouse lemur</li><li>Ugandan red Colobus</li><li>human</li><li>house mouse</li><li>pig</li><li>Drill</li><li>Burton's mouthbrooder</li><li>lion</li><li>burrowing owl</li><li>cape rock hyrax</li><li>Indian glassy fish</li><li>gelada</li><li>house mouse</li><li>Budgie</li><li>Japanese medaka HNI</li><li>Chacoan peccary</li><li>pink-footed goose</li><li>tiger tail seahorse</li><li>house mouse</li><li>turbot</li><li>gray short-tailed opossum</li><li>greater horseshoe bat</li><li>Paramormyrops kingsleyae</li><li>blind barbel</li><li>rufous-capped babbler</li><li>Komodo dragon</li><li>baker's yeast</li><li>Monterrey platyfish</li><li>beluga whale</li><li>Western painted turtle</li><li>Japanese medaka HSOK</li><li>house mouse</li><li>Angola colobus</li><li>Golden Hamster</li><li>spiny chromis</li><li>naked mole-rat</li><li>Makobe Island cichlid</li><li>dog</li><li>fugu</li><li>golden pheasant</li><li>Crab-eating macaque</li><li>koala</li><li>house mouse</li><li>Nile tilapia</li><li>Ring-necked pheasant</li><li>Ord's kangaroo rat</li><li>large flying fox</li><li>C.elegans</li><li>Alpine marmot</li><li>mallard</li><li>eastern european house mouse</li><li>hybrid cattle</li><li>house mouse</li><li>round goby</li><li>Siamese fighting fish</li><li>Polar bear</li><li>Brazilian guinea pig</li><li>Sooty mangabey</li><li>pig</li><li>Lesser Egyptian jerboa</li><li>javanese ricefish</li><li>common wall lizard</li><li>rabbit</li><li>chimpanzee</li><li>Siberian musk deer</li><li>dingo</li><li>Bolivian squirrel monkey</li><li>Long-tailed chinchilla</li><li>fruit fly</li><li>eastern brown snake</li><li>pig</li><li>Australian saltwater crocodile</li><li>green anole</li><li>shortfin molly</li><li>tammar wallaby</li><li>Atlantic salmon</li><li>domestic yak</li><li>Chinese medaka</li><li>Norway rat</li><li>sheepshead minnow</li><li>small-eared galago</li><li>eastern happy</li><li>blue tit</li><li>algerian mouse</li><li>pig</li><li>Atlantic herring</li><li>Japanese quail</li><li>dog</li><li>little spotted kiwi</li><li>Canada lynx</li><li>swamp eel</li><li>southern platyfish</li><li>little brown bat</li><li>West African mud turtle</li><li>nine-banded armadillo</li><li>greater amberjack</li><li>Eurasian sparrowhawk</li><li>Goodes thornscrub tortoise</li><li>American bison</li><li>brown trout</li><li>Argentine black and white tegu</li><li>house mouse</li><li>Damara mole rat</li><li>cattle</li><li>Macaque</li><li>golden-line barbel</li><li>Japanese medaka HdrR</li><li>Black snub-nosed monkey</li><li>blunt-snouted clingfish</li><li>elephant shark</li><li>Northern American deer mouse</li><li>pig</li><li>barramundi perch</li><li>common carp german mirror</li><li>western European hedgehog</li><li>thirteen-lined ground squirrel</li><li>Degu</li><li>yellow-billed parrot</li><li>medium ground-finch</li><li>golden eagle</li><li>climbing perch</li><li>domestic turkey</li><li>Abingdon island giant tortoise</li><li>western european house mouse</li><li>Tasmanian devil</li><li>common canary</li><li>mummichog</li><li>giant panda</li><li>Northern white-cheeked gibbon</li><li>zebra finch</li><li>goldfish</li><li>white-throated sparrow</li><li>dark-eyed junco</li><li>guppy</li><li>zig-zag eel</li><li>Chinese hamster</li><li>Upper Galilee mountains blind mole rat</li><li>pig</li><li>house mouse</li><li>bonobo</li><li>dog</li><li>ocean sunfish</li><li>small tree finch</li><li>Sea squirt Ciona savignyi</li><li>rainbow trout</li><li>Mongolian gerbil</li><li>chicken</li><li>blue-crowned manakin</li><li>Daurian ground squirrel</li><li>wild yak</li><li>Coquerel's sifaka</li><li>African green monkey</li><li>three-spined stickleback</li><li>Inshore hagfish</li><li>ballan wrasse</li><li>house mouse</li><li>Bengalese finch</li><li>south eastern house mouse</li><li>Common snapping turtle</li><li>sailfin molly</li><li>pig</li><li>tuatara</li><li>European shrew</li><li>Ryukyu mouse</li><li>pig</li><li>European seabass</li><li>swan goose</li><li>denticle herring</li><li>bottlenosed dolphin</li><li>emu</li><li>Arctic ground squirrel</li><li>Atlantic cod</li><li>Domestic ferret</li><li>common carp hebao red</li><li>orange clownfish</li><li>silver-eye</li><li>Golden snub-nosed monkey</li><li>Sea squirt Ciona intestinalis</li><li>pig</li><li>American pika</li><li>Hoffmann's two-fingered sloth</li><li>Indian medaka</li><li>red-bellied piranha</li><li>Arabian camel</li><li>donkey</li><li>Asian bonytongue</li><li>hybrid cattle</li><li>Chinook salmon</li><li>channel catfish</li><li>domestic cat</li></ol></body></html> </ol> </body> </html>
+
+We do not put in the report more special cases of species list
+because our index page has a input type tag with a minimum and a maximum
+so if we put a number greater tan 286 that is the maximum number of species in the ensembl,
+or a number lower than 1 the page does not run and shows us the error.
+
+-------- Karyotype -------
+
+* TEST 1 (test if we put a valid specie)
+Input: http://127.0.0.1:8080/karyotype?specie=rat
+Output: 
+<!DOCTYPE html> 
+	<html lang="en"> 
+	<head>
+	<meta charset="UTF-8">
+	<title>Karyotype</title>
+	</head>
+	<body style="background-color: #F6D8FF;">
+	<h1><b><FONT face = "Courier New">Karyotype</FONT></b></h1>
+	<a href="/"> Main page </a>
+	<hr>
+	<p> Names of the chromosomes of the: rat <P>
+	<ol> <li type=square>1</li><li type=square>2</li><li type=square>3</li><li type=square>4</li><li type=square>5</li><li type=square>6</li><li type=square>7</li><li type=square>8</li><li type=square>9</li><li type=square>10</li><li type=square>11</li><li type=square>12</li><li type=square>13</li><li type=square>14</li><li type=square>15</li><li type=square>16</li><li type=square>17</li><li type=square>18</li><li type=square>19</li><li type=square>20</li><li type=square>X</li><li type=square>Y</li> </ol>
+	</body>
+	</html>
+
+
+* TEST 2 (if we put a wrong specie)(KeyError)
+Input: http://127.0.0.1:8080/karyotype?specie=e
+Output:
+<!DOCTYPE html>
+       <html lang="en">
+       <head>
+            <meta charset="UTF-8">
+            <title>Error</title>
+       </head>
+       <body style="background-color: #FE2E2E;">
+       <h1><b><FONT face = "Courier New">ERROR</FONT></b></h1>
+       <a href="/"> Main page </a>
+       <hr>
+       <p> Sorry this specie is not valid </p>
+       </body>
+       </html>
+
+* TEST 3 (If we enter a valid specie, but the ensembl does not have the karyotype of this specie)
+Input: http://127.0.0.1:8080/karyotype?specie=tiger
+Output:
+<!DOCTYPE html> 
+	<html lang="en"> 
+	<head>
+	<meta charset="UTF-8">
+	<title>Karyotype</title>
+	</head>
+	<body style="background-color: #F6D8FF;">
+	<h1><b><FONT face = "Courier New">Karyotype</FONT></b></h1>
+	<a href="/"> Main page </a>
+	<hr>
+	<p> Names of the chromosomes of the: tiger <P>
+	<ol> Sorry, we don't have information about the karyotype of this specie </ol>
+	</body>
+	</html>
+
+
+* TEST 4  (If the push the send button without filling the box)(KeyError)
+Input: http://127.0.0.1:8080/karyotype?specie=
+Output:
+<!DOCTYPE html>
+       <html lang="en">
+       <head>
+            <meta charset="UTF-8">
+            <title>Error</title>
+       </head>
+       <body style="background-color: #FE2E2E;">
+       <h1><b><FONT face = "Courier New">ERROR</FONT></b></h1>
+       <a href="/"> Main page </a>
+       <hr>
+       <p> Sorry this specie is not valid </p>
+       </body>
+       </html>
+
+----- Chromosome lenght------
+
+* TEST 1 (If we enter a valid specie and chromosome)
+Input: http://127.0.0.1:8080/chromosomeLenght?specie=human&chromosome=Y
+Output: 
+<!DOCTYPE html> 
+	<html lang="en"> 
+	<head>
+	<meta charset="UTF-8">
+	<title>Lenght</title>
+	</head>
+	<body style="background-color: #F6D8FF;">
+	<h1><b><FONT face = "Courier New">Chromosome lenght</FONT></b></h1>
+	<a href="/"> Main page </a>
+	<hr>
+	<p> Selected specie: human</p>
+	<p> Selected chromosome: Y</p>
+	<p> Lenght of the chromosome: 57227415 <P>
+	</body>
+	</html>
+
+* TEST 2 (If we enter a valid chromosome but a wrong specie)(KeyError)
+Input: http://127.0.0.1:8080/chromosomeLenght?specie=wrong&chromosome=X
+Output: 
+<!DOCTYPE html> 
+           <html lang="en"> 
+           <head>
+           <meta charset="UTF-8">
+           <title>Error</title>
+           </head>
+           <body style="background-color: #FE2E2E;">
+           <h1><b><FONT face = "Courier New">ERROR</FONT></b></h1>
+           <a href="/"> Main page </a>
+           <hr>
+           <p> Please enter a valid specie and chromosome </p>
+           </body>
+           </html>
+
+* TEST 3(If we enter a valid specie but a wrong chromosome)
+Input: http://127.0.0.1:8080/chromosomeLenght?specie=human&chromosome=25
+Output: 
+<!DOCTYPE html>
+     <html lang="en">
+     <head>
+     <meta charset="UTF-8">
+     <title>Error</title>
+     </head>
+     <body style="background-color: #FE2E2E;">
+     <h1><b><FONT face = "Courier New">ERROR </FONT></b></h1>
+     <a href="/"> Main page </a>
+   <hr>
+   <p> Sorry, this chromosome is not valid for the specie you choose</p>
+   </body>
+   </html>
+
+
+
+* TEST 4 (If the specie and the chromosome are wrong)(KeyError)
+Input: http://127.0.0.1:8080/chromosomeLenght?specie=wrong&chromosome=wrong
+Output: 
+<!DOCTYPE html> 
+	<html lang="en"> 
+	<head>
+	<meta charset="UTF-8">
+	<title>Error</title>
+	</head>
+	<body style="background-color: #FE2E2E;">
+	<h1><b><FONT face = "Courier New">ERROR</FONT></b></h1>
+	<a href="/"> Main page </a>
+	<hr>
+	<p> Please enter a valid specie and chromosome </p>
+	</body>
+	</html>
+
+
+* TEST 5 (If you push send without filling any box)(KeyError)
+Input: http://127.0.0.1:8080/chromosomeLenght?specie=&chromosome=
+Output:
+<!DOCTYPE html>
+       <html lang="en">
+       <head>
+            <meta charset="UTF-8">
+            <title>Error</title>
+       </head>
+       <body style="background-color: #FE2E2E;">
+       <h1><b><FONT face = "Courier New">ERROR</FONT></b></h1>
+       <a href="/"> Main page </a>
+       <hr>
+       <p> Please enter a valid specie and chromosome </p>
+       </body>
+       </html>
+
+* TEST 6(If you push send without filling the chromosome box and the specie is valid)
+Input: http://127.0.0.1:8080/chromosomeLenght?specie=human&chromosome=
+Output: <!DOCTYPE html>
+               <html lang="en">
+               <head>
+                    <meta charset="UTF-8">
+                    <title>Error</title>
+               </head>
+               <body style="background-color: #FE2E2E;">
+               <h1><b><FONT face = "Courier New">ERROR</FONT></b></h1>
+               <a href="/"> Main page </a>
+               <hr>
+               <p> Sorry, this chromosome is not valid for the specie you choose</p>
+               </body>
+               </html>
+
+* TEST 7(If you push send without filling the chromosome box and the specie is wrong)(KeyError)
+Input: http://127.0.0.1:8080/chromosomeLenght?specie=wrong&chromosome=
+Output:
+<!DOCTYPE html>
+       <html lang="en">
+       <head>
+            <meta charset="UTF-8">
+            <title>Error</title>
+       </head>
+       <body style="background-color: #FE2E2E;">
+       <h1><b><FONT face = "Courier New">ERROR</FONT></b></h1>
+       <a href="/"> Main page </a>
+       <hr>
+       <p> Please enter a valid specie and chromosome </p>
+       </body>
+       </html>
+
+* TEST 8 (If you push the send button without filling the specie box and the chromosome is valid)(KeyError)
+Input: http://127.0.0.1:8080/chromosomeLenght?specie=&chromosome=1
+Output:
+<!DOCTYPE html>
+       <html lang="en">
+       <head>
+            <meta charset="UTF-8">
+            <title>Error</title>
+       </head>
+       <body style="background-color: #FE2E2E;">
+       <h1><b><FONT face = "Courier New">ERROR</FONT></b></h1>
+       <a href="/"> Main page </a>
+       <hr>
+       <p> Please enter a valid specie and chromosome</p>
+       </body>
+       </html>
+
+* TEST 9 (If you push the send button without filling the specie box and the chromosome is wrong)(KeyError)
+Input: http://127.0.0.1:8080/chromosomeLenght?specie=&chromosome=wrong
+Output:
+<!DOCTYPE html>
+       <html lang="en">
+       <head>
+            <meta charset="UTF-8">
+            <title>Error</title>
+       </head>
+       <body style="background-color: #FE2E2E;">
+       <h1><b><FONT face = "Courier New">ERROR</FONT></b></h1>
+       <a href="/"> Main page </a>
+       <hr>
+       <p> Please enter a valid specie and chromosome </p>
+       </body>
+       </html>
+

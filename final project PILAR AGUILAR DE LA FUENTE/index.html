@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>INDEX</title>
+</head>
+<body style="background-color: #F6D8FF;">
+
+<h1 align = "center"><FONT face = "Courier New" >Browsing Human and Vertebrates genome </FONT></h1>
+<h2 align="center"><FONT face = "Courier New">Basic level services</FONT></h2>
+    <hr>
+
+ <form action="/listSpecies" method="get">
+     <h3><b><FONT face = "Courier New" >List of species</FONT></b></h3>
+     <p><FONT face = "Courier New">Choose a limit, from 1 to 286. </FONT></p>
+     <p><FONT face = "Courier New">Limit:  <input type="number" name="limit" min="1" max="286"></FONT><br>
+     <br>
+     <input value="SEND" type="submit"/>
+    <hr>
+    </form>
+<form action="/karyotype" method="get">
+     <h3><b><FONT face = "Courier New" >Karyotype </FONT></b></h3>
+     <p><FONT face = "Courier New">Select a specie:  <input type="text" name="specie" ></FONT><br>
+     <br>
+     <input value="SEND" type="submit"/>
+    <hr>
+    </form>
+<form action="/chromosomeLenght" method="get">
+     <h3><b><FONT face = "Courier New" >Chromosome Lenght </FONT></b></h3>
+     <p><FONT face = "Courier New">Select a specie:  <input type="text" name="specie" ></FONT><br>
+     <p><FONT face = "Courier New">Select a chromosome:  <input type="text" name="chromosome" ></FONT><br>
+     <br>
+     <input value="SEND" type="submit"/>
+    <hr>
+    </form>
+<form action="/geneSeq" method="get">
+     <h3><b><FONT face = "Courier New" >Sequence of a human</FONT></b></h3>
+     <p><FONT face = "Courier New">Select a gene:  <input type="text" name="gene" ></FONT><br>
+     <input value="SEND" type="submit"/>
+    <hr>
+    </form>
+
+<form action="/geneInfo" method="get">
+     <h3><b><FONT face = "Courier New" >Info gene</FONT></b></h3>
+     <p><FONT face = "Courier New">Select a gene:  <input type="text" name="gene" ></FONT><br>
+     <input value="SEND" type="submit"/>
+    <hr>
+    </form>
+
+<form action="/geneCalc" method="get">
+     <h3><b><FONT face = "Courier New" >Calculations</FONT></b></h3>
+     <p><FONT face = "Courier New">Select a gene:  <input type="text" name="gene" ></FONT><br>
+     <input value="SEND" type="submit"/>
+    <hr>
+    </form>
+<form action="/geneList" method="get">
+     <h3><b><FONT face = "Courier New" >Gene List</FONT></b></h3>
+     <p><FONT face = "Courier New">Select a chromosome:  <input type="text" name="chromo" ></FONT><br>
+     <p><FONT face = "Courier New">Select a start:  <input type="text" name="start" ></FONT><br>
+     <p><FONT face = "Courier New">Select an end:  <input type="text" name="end" ></FONT><br>
+         <input value="SEND" type="submit"/>
+    <hr>
+    </form>
+
+</body>
+</html>
