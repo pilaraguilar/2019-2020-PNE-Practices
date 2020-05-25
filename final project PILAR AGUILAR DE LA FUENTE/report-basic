@@ -4,46 +4,171 @@ In this report I run my basic server for the final Project:
 * TEST 1
 Input: http://127.0.0.1:8080/
 Output: 
-<!DOCTYPE html><html lang="en" dir="ltr"><head> <meta charset="UTF-8"> <title>INDEX</title></head><body style="background-color: #F6D8FF;">
-<h1 align = "center"><FONT face = "Courier New" >Browsing Human and Vertebrates genome </FONT></h1><h2 align="center"><FONT face = "Courier New">Basic level services</FONT></h2> <hr>
-<form action="/listSpecies" method="get"> <h3><b><FONT face = "Courier New" >List of species</FONT></b></h3> <p><FONT face = "Courier New">Choose a limit, from 1 to 286. </FONT></p> <p><FONT face = "Courier New">Limit: <input type="number" name="limit" min="1" max="286"></FONT><br> <br> <input value="SEND" type="submit"/> <hr> </form><form action="/karyotype" method="get"> <h3><b><FONT face = "Courier New" >Karyotype </FONT></b></h3> <p><FONT face = "Courier New">Select a specie: <input type="text" name="specie" ></FONT><br> <br> <input value="SEND" type="submit"/> <hr> </form><form action="/chromosomeLenght" method="get"> <h3><b><FONT face = "Courier New" >Chromosome Lenght </FONT></b></h3> <p><FONT face = "Courier New">Select a specie: <input type="text" name="specie" ></FONT><br> <p><FONT face = "Courier New">Select a chromosome: <input type="text" name="chromosome" ></FONT><br> <br> <input value="SEND" type="submit"/> <hr> </form></body></html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8" />
+        <title>INDEX</title>
+    </head>
+    <body style="background-color: #f6d8ff;">
+        <h1 align="center"><font face="Courier New">Browsing Human and Vertebrates genome </font></h1>
+        <h2 align="center"><font face="Courier New">Basic level services</font></h2>
+        <hr />
+        <form action="/listSpecies" method="get">
+            <h3>
+                <b><font face="Courier New">List of species</font></b>
+            </h3>
+            <p><font face="Courier New">Choose a limit, from 1 to 286. </font></p>
+            <p>
+                <font face="Courier New">Limit: <input type="number" name="limit" min="1" max="286" /></font><br />
+                <br />
+                <input value="SEND" type="submit" />
+            </p>
+            <hr />
+        </form>
+        <form action="/karyotype" method="get">
+            <h3>
+                <b><font face="Courier New">Karyotype </font></b>
+            </h3>
+            <p>
+                <font face="Courier New">Select a specie: <input type="text" name="specie" /></font><br />
+                <br />
+                <input value="SEND" type="submit" />
+            </p>
+            <hr />
+        </form>
+        <form action="/chromosomeLenght" method="get">
+            <h3>
+                <b><font face="Courier New">Chromosome Lenght </font></b>
+            </h3>
+            <p>
+                <font face="Courier New">Select a specie: <input type="text" name="specie" /></font><br />
+            </p>
+            <p>
+                <font face="Courier New">Select a chromosome: <input type="text" name="chromosome" /></font><br />
+                <br />
+                <input value="SEND" type="submit" />
+            </p>
+            <hr />
+        </form>
+    </body>
+</html>
 
 * TEST 2
 Input: http://127.0.0.1:8080/index.html
 Output: 
-<!DOCTYPE html><html lang="en" dir="ltr"><head> <meta charset="UTF-8"> <title>INDEX</title></head><body style="background-color: #F6D8FF;">
-<h1 align = "center"><FONT face = "Courier New" >Browsing Human and Vertebrates genome </FONT></h1><h2 align="center"><FONT face = "Courier New">Basic level services</FONT></h2> <hr>
-<form action="/listSpecies" method="get"> <h3><b><FONT face = "Courier New" >List of species</FONT></b></h3> <p><FONT face = "Courier New">Choose a limit, from 1 to 286. </FONT></p> <p><FONT face = "Courier New">Limit: <input type="number" name="limit" min="1" max="286"></FONT><br> <br> <input value="SEND" type="submit"/> <hr> </form><form action="/karyotype" method="get"> <h3><b><FONT face = "Courier New" >Karyotype </FONT></b></h3> <p><FONT face = "Courier New">Select a specie: <input type="text" name="specie" ></FONT><br> <br> <input value="SEND" type="submit"/> <hr> </form><form action="/chromosomeLenght" method="get"> <h3><b><FONT face = "Courier New" >Chromosome Lenght </FONT></b></h3> <p><FONT face = "Courier New">Select a specie: <input type="text" name="specie" ></FONT><br> <p><FONT face = "Courier New">Select a chromosome: <input type="text" name="chromosome" ></FONT><br> <br> <input value="SEND" type="submit"/> <hr> </form></body></html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8" />
+        <title>INDEX</title>
+    </head>
+    <body style="background-color: #f6d8ff;">
+        <h1 align="center"><font face="Courier New">Browsing Human and Vertebrates genome </font></h1>
+        <h2 align="center"><font face="Courier New">Basic level services</font></h2>
+        <hr />
+        <form action="/listSpecies" method="get">
+            <h3>
+                <b><font face="Courier New">List of species</font></b>
+            </h3>
+            <p><font face="Courier New">Choose a limit, from 1 to 286. </font></p>
+            <p>
+                <font face="Courier New">Limit: <input type="number" name="limit" min="1" max="286" /></font><br />
+                <br />
+                <input value="SEND" type="submit" />
+            </p>
+            <hr />
+        </form>
+        <form action="/karyotype" method="get">
+            <h3>
+                <b><font face="Courier New">Karyotype </font></b>
+            </h3>
+            <p>
+                <font face="Courier New">Select a specie: <input type="text" name="specie" /></font><br />
+                <br />
+                <input value="SEND" type="submit" />
+            </p>
+            <hr />
+        </form>
+        <form action="/chromosomeLenght" method="get">
+            <h3>
+                <b><font face="Courier New">Chromosome Lenght </font></b>
+            </h3>
+            <p>
+                <font face="Courier New">Select a specie: <input type="text" name="specie" /></font><br />
+            </p>
+            <p>
+                <font face="Courier New">Select a chromosome: <input type="text" name="chromosome" /></font><br />
+                <br />
+                <input value="SEND" type="submit" />
+            </p>
+            <hr />
+        </form>
+    </body>
+</html>
 
 * TEST 3 (If the path is wrong)
 Input: http://127.0.0.1:8080/wrong
 Output: 
 <!DOCTYPE html>
-	<html lang="en">
-	<head>
-	<meta charset="UTF-8">
-	<title>Error</title>
-	</head>
-	<body style="background-color: #FE2E2E;">
-	<h1>ERROR</h1>
-	<a href="/">Main page</a>
-	<hr>
-	<p>Resource not available</p>
-	<h1></h1>
-	</body>
-	</html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Error</title>
+    </head>
+    <body style="background-color: #fe2e2e;">
+        <h1>ERROR</h1>
+        <a href="/">Main page</a>
+        <hr />
+        <p>Resource not available</p>
+        <h1></h1>
+    </body>
+</html>
+
 
 
 ---------- List of species --------
 * TEST1 (Test the case that a limit is chosen)
  Input: http://127.0.0.1:8080/listSpecies?limit=23
  Output:
- <!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <title>Species List</title> </head> <body style="background-color: #F6D8FF;"> <h1><b><FONT face = "Courier New">List of species</FONT></b></h1> <a href="/"> Main page </a> <hr> <p>The total number of species in the ensembl is: 286 <p> <p>You have selected the limit: 23 <p> <p>The names of the species are: <P> <ol> <li>pig</li><li>American pika</li><li>African ostrich</li><li>Nile tilapia</li><li>channel catfish</li><li>West African mud turtle</li><li>channel bull blenny</li><li>Sooty mangabey</li><li>bottlenosed dolphin</li><li>naked mole-rat</li><li>brown trout</li><li>eastern brown snake</li><li>south eastern house mouse</li><li>spiny chromis</li><li>Western Lowland Gorilla</li><li>silver-eye</li><li>Hoffmann's two-fingered sloth</li><li>Eurasian sparrowhawk</li><li>house mouse</li><li>sailfin molly</li><li>greater bamboo lemur</li><li>mangrove rivulus</li><li>platypus</li></ol></body></html> </ol> </body> </html>
+
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+        <meta charset="UTF-8">
+        <title>Species List</title>
+   </head>
+   <body style="background-color: #F6D8FF;">
+   <h1><b><FONT face = "Courier New">List of species</FONT></b></h1>
+   <a href="/"> Main page </a>
+   <hr>
+   <p>The total number of species in the ensembl is: 286 <p>
+   <p>You have selected the limit: 23 <p>
+   <p>The names of the species are: <P>
+   <ol> <li>pig</li><li>American pika</li><li>African ostrich</li><li>Nile tilapia</li><li>channel catfish</li><li>West African mud turtle</li><li>channel bull blenny</li><li>Sooty mangabey</li><li>bottlenosed dolphin</li><li>naked mole-rat</li><li>brown trout</li><li>eastern brown snake</li><li>south eastern house mouse</li><li>spiny chromis</li><li>Western Lowland Gorilla</li><li>silver-eye</li><li>Hoffmann's two-fingered sloth</li><li>Eurasian sparrowhawk</li><li>house mouse</li><li>sailfin molly</li><li>greater bamboo lemur</li><li>mangrove rivulus</li><li>platypus</li></ol></body></html> </ol>
+   </body>
+   </html>
+
 
 * TEST2 (Test the case that a limit is not chosen, all species are printed)
  Input http://127.0.0.1:8080/listSpecies?limit=
   Output:
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <title>Species List</title> </head> <body style="background-color: #F6D8FF;"> <h1><b><FONT face = "Courier New">List of species</FONT></b></h1> <a href="/"> Main page </a> <hr> <p>The total number of species in the ensembl is: 286 <p> <p>You have not selected a limit <p> <p>The names of the species are: <P> <ol> <li>mainland tiger snake</li><li>birds</li><li>red fox</li><li>sperm whale</li><li>Great spotted kiwi</li><li>pinecone soldierfish</li><li>greater bamboo lemur</li><li>Kakapo</li><li>sea lamprey</li><li>Gouldian finch</li><li>electric eel</li><li>Okarito brown kiwi</li><li>large yellow croaker</li><li>channel bull blenny</li><li>house mouse</li><li>zebrafish</li><li>common carp huanghe</li><li>house mouse</li><li>pig</li><li>horned golden-line barbel</li><li>northern tree shrew</li><li>white-tufted-ear marmoset</li><li>Spotted gar</li><li>Tiger</li><li>Goat</li><li>central bearded dragon</li><li>naked mole-rat</li><li>American black bear</li><li>spotted green pufferfish</li><li>meerkat</li><li>steppe mouse</li><li>lyretail cichlid</li><li>mangrove rivulus</li><li>Western Lowland Gorilla</li><li>Domestic sheep</li><li>bicolor damselfish</li><li>coelacanth</li><li>Midas cichlid</li><li>Ma's night monkey</li><li>Pachon cavefish</li><li>common wombat</li><li>blue-ringed sea krait</li><li>gilthead seabream</li><li>Indian peafowl</li><li>Pig-tailed macaque</li><li>American beaver</li><li>pig</li><li>common mallard</li><li>Shrew mouse</li><li>western mosquitofish</li><li>Agassiz's desert tortoise</li><li>helmeted guineafowl</li><li>Amazon molly</li><li>Chinese hamster</li><li>Bornean orangutan</li><li>Olive baboon</li><li>orbiculate cardinalfish</li><li>zebra mbuna</li><li>African savanna elephant</li><li>American mink</li><li>domestic guinea pig</li><li>platypus</li><li>White-headed capuchin</li><li>golden-collared manakin</li><li>Three-toed box turtle</li><li>vole</li><li>tropical clawed frog</li><li>common carp</li><li>blue tilapia</li><li>Collared flycatcher</li><li>pig</li><li>Spoon-billed sandpiper</li><li>African ostrich</li><li>Periophthalmus magnuspinnatus</li><li>Chinese softshell turtle</li><li>Asiatic black bear</li><li>reedfish</li><li>Philippine tarsier</li><li>clown anemonefish</li><li>huchen</li><li>horse</li><li>pig</li><li>Chinese hamster</li><li>house mouse</li><li>Mexican tetra</li><li>small Madagascar hedgehog</li><li>jewelled blenny</li><li>tongue sole</li><li>house mouse</li><li>leopard</li><li>live sharksucker</li><li>Great Tit</li><li>northern pike</li><li>yellowtail amberjack</li><li>ruff</li><li>alpaca</li><li>gray mouse lemur</li><li>Ugandan red Colobus</li><li>human</li><li>house mouse</li><li>pig</li><li>Drill</li><li>Burton's mouthbrooder</li><li>lion</li><li>burrowing owl</li><li>cape rock hyrax</li><li>Indian glassy fish</li><li>gelada</li><li>house mouse</li><li>Budgie</li><li>Japanese medaka HNI</li><li>Chacoan peccary</li><li>pink-footed goose</li><li>tiger tail seahorse</li><li>house mouse</li><li>turbot</li><li>gray short-tailed opossum</li><li>greater horseshoe bat</li><li>Paramormyrops kingsleyae</li><li>blind barbel</li><li>rufous-capped babbler</li><li>Komodo dragon</li><li>baker's yeast</li><li>Monterrey platyfish</li><li>beluga whale</li><li>Western painted turtle</li><li>Japanese medaka HSOK</li><li>house mouse</li><li>Angola colobus</li><li>Golden Hamster</li><li>spiny chromis</li><li>naked mole-rat</li><li>Makobe Island cichlid</li><li>dog</li><li>fugu</li><li>golden pheasant</li><li>Crab-eating macaque</li><li>koala</li><li>house mouse</li><li>Nile tilapia</li><li>Ring-necked pheasant</li><li>Ord's kangaroo rat</li><li>large flying fox</li><li>C.elegans</li><li>Alpine marmot</li><li>mallard</li><li>eastern european house mouse</li><li>hybrid cattle</li><li>house mouse</li><li>round goby</li><li>Siamese fighting fish</li><li>Polar bear</li><li>Brazilian guinea pig</li><li>Sooty mangabey</li><li>pig</li><li>Lesser Egyptian jerboa</li><li>javanese ricefish</li><li>common wall lizard</li><li>rabbit</li><li>chimpanzee</li><li>Siberian musk deer</li><li>dingo</li><li>Bolivian squirrel monkey</li><li>Long-tailed chinchilla</li><li>fruit fly</li><li>eastern brown snake</li><li>pig</li><li>Australian saltwater crocodile</li><li>green anole</li><li>shortfin molly</li><li>tammar wallaby</li><li>Atlantic salmon</li><li>domestic yak</li><li>Chinese medaka</li><li>Norway rat</li><li>sheepshead minnow</li><li>small-eared galago</li><li>eastern happy</li><li>blue tit</li><li>algerian mouse</li><li>pig</li><li>Atlantic herring</li><li>Japanese quail</li><li>dog</li><li>little spotted kiwi</li><li>Canada lynx</li><li>swamp eel</li><li>southern platyfish</li><li>little brown bat</li><li>West African mud turtle</li><li>nine-banded armadillo</li><li>greater amberjack</li><li>Eurasian sparrowhawk</li><li>Goodes thornscrub tortoise</li><li>American bison</li><li>brown trout</li><li>Argentine black and white tegu</li><li>house mouse</li><li>Damara mole rat</li><li>cattle</li><li>Macaque</li><li>golden-line barbel</li><li>Japanese medaka HdrR</li><li>Black snub-nosed monkey</li><li>blunt-snouted clingfish</li><li>elephant shark</li><li>Northern American deer mouse</li><li>pig</li><li>barramundi perch</li><li>common carp german mirror</li><li>western European hedgehog</li><li>thirteen-lined ground squirrel</li><li>Degu</li><li>yellow-billed parrot</li><li>medium ground-finch</li><li>golden eagle</li><li>climbing perch</li><li>domestic turkey</li><li>Abingdon island giant tortoise</li><li>western european house mouse</li><li>Tasmanian devil</li><li>common canary</li><li>mummichog</li><li>giant panda</li><li>Northern white-cheeked gibbon</li><li>zebra finch</li><li>goldfish</li><li>white-throated sparrow</li><li>dark-eyed junco</li><li>guppy</li><li>zig-zag eel</li><li>Chinese hamster</li><li>Upper Galilee mountains blind mole rat</li><li>pig</li><li>house mouse</li><li>bonobo</li><li>dog</li><li>ocean sunfish</li><li>small tree finch</li><li>Sea squirt Ciona savignyi</li><li>rainbow trout</li><li>Mongolian gerbil</li><li>chicken</li><li>blue-crowned manakin</li><li>Daurian ground squirrel</li><li>wild yak</li><li>Coquerel's sifaka</li><li>African green monkey</li><li>three-spined stickleback</li><li>Inshore hagfish</li><li>ballan wrasse</li><li>house mouse</li><li>Bengalese finch</li><li>south eastern house mouse</li><li>Common snapping turtle</li><li>sailfin molly</li><li>pig</li><li>tuatara</li><li>European shrew</li><li>Ryukyu mouse</li><li>pig</li><li>European seabass</li><li>swan goose</li><li>denticle herring</li><li>bottlenosed dolphin</li><li>emu</li><li>Arctic ground squirrel</li><li>Atlantic cod</li><li>Domestic ferret</li><li>common carp hebao red</li><li>orange clownfish</li><li>silver-eye</li><li>Golden snub-nosed monkey</li><li>Sea squirt Ciona intestinalis</li><li>pig</li><li>American pika</li><li>Hoffmann's two-fingered sloth</li><li>Indian medaka</li><li>red-bellied piranha</li><li>Arabian camel</li><li>donkey</li><li>Asian bonytongue</li><li>hybrid cattle</li><li>Chinook salmon</li><li>channel catfish</li><li>domestic cat</li></ol></body></html> </ol> </body> </html>
+<!DOCTYPE html>
+       <html lang="en">
+       <head>
+            <meta charset="UTF-8">
+            <title>Species List</title>
+       </head>
+       <body style="background-color: #F6D8FF;">
+       <h1><b><FONT face = "Courier New">List of species</FONT></b></h1>
+       <a href="/"> Main page </a>
+       <hr>
+       <p>The total number of species in the ensembl is: 286 <p>
+       <p>You have not selected a limit <p>
+       <p>The names of the species are: <P>
+       <ol> <li>pig</li><li>American pika</li><li>African ostrich</li><li>Nile tilapia</li><li>channel catfish</li><li>West African mud turtle</li><li>channel bull blenny</li><li>Sooty mangabey</li><li>bottlenosed dolphin</li><li>naked mole-rat</li><li>brown trout</li><li>eastern brown snake</li><li>south eastern house mouse</li><li>spiny chromis</li><li>Western Lowland Gorilla</li><li>silver-eye</li><li>Hoffmann's two-fingered sloth</li><li>Eurasian sparrowhawk</li><li>house mouse</li><li>sailfin molly</li><li>greater bamboo lemur</li><li>mangrove rivulus</li><li>platypus</li><li>live sharksucker</li><li>large flying fox</li><li>house mouse</li><li>Domestic ferret</li><li>coelacanth</li><li>lion</li><li>Siamese fighting fish</li><li>pig</li><li>Brazilian guinea pig</li><li>sheepshead minnow</li><li>beluga whale</li><li>domestic yak</li><li>orbiculate cardinalfish</li><li>Chinese hamster</li><li>Kakapo</li><li>Bornean orangutan</li><li>Daurian ground squirrel</li><li>pig</li><li>house mouse</li><li>common carp huanghe</li><li>Three-toed box turtle</li><li>tongue sole</li><li>chimpanzee</li><li>Ma's night monkey</li><li>red-bellied piranha</li><li>pig</li><li>Drill</li><li>green anole</li><li>common mallard</li><li>common carp german mirror</li><li>birds</li><li>white-tufted-ear marmoset</li><li>Chinese medaka</li><li>greater amberjack</li><li>house mouse</li><li>dark-eyed junco</li><li>house mouse</li><li>Arctic ground squirrel</li><li>pig</li><li>mallard</li><li>dog</li><li>Great Tit</li><li>pig</li><li>mainland tiger snake</li><li>pig</li><li>small Madagascar hedgehog</li><li>climbing perch</li><li>tuatara</li><li>wild yak</li><li>small-eared galago</li><li>Degu</li><li>Siberian musk deer</li><li>northern pike</li><li>pig</li><li>gilthead seabream</li><li>Ord's kangaroo rat</li><li>Ring-necked pheasant</li><li>mummichog</li><li>American mink</li><li>Tasmanian devil</li><li>horned golden-line barbel</li><li>Shrew mouse</li><li>Golden Hamster</li><li>Pachon cavefish</li><li>eastern european house mouse</li><li>hybrid cattle</li><li>Canada lynx</li><li>tammar wallaby</li><li>Argentine black and white tegu</li><li>Monterrey platyfish</li><li>blue tit</li><li>Japanese quail</li><li>little brown bat</li><li>giant panda</li><li>Chinook salmon</li><li>western European hedgehog</li><li>Ryukyu mouse</li><li>Chinese hamster</li><li>northern tree shrew</li><li>central bearded dragon</li><li>Amazon molly</li><li>helmeted guineafowl</li><li>three-spined stickleback</li><li>Northern American deer mouse</li><li>baker's yeast</li><li>dog</li><li>golden eagle</li><li>tiger tail seahorse</li><li>Chacoan peccary</li><li>Japanese medaka HdrR</li><li>sea lamprey</li><li>Mexican tetra</li><li>Common snapping turtle</li><li>American black bear</li><li>Okarito brown kiwi</li><li>Gouldian finch</li><li>Mongolian gerbil</li><li>Sea squirt Ciona intestinalis</li><li>house mouse</li><li>Great spotted kiwi</li><li>western mosquitofish</li><li>Periophthalmus magnuspinnatus</li><li>house mouse</li><li>Collared flycatcher</li><li>yellow-billed parrot</li><li>house mouse</li><li>Pig-tailed macaque</li><li>dingo</li><li>rainbow trout</li><li>alpaca</li><li>zig-zag eel</li><li>Inshore hagfish</li><li>common carp</li><li>nine-banded armadillo</li><li>pig</li><li>gray short-tailed opossum</li><li>lyretail cichlid</li><li>Goat</li><li>barramundi perch</li><li>small tree finch</li><li>western european house mouse</li><li>American beaver</li><li>pig</li><li>elephant shark</li><li>sperm whale</li><li>Spotted gar</li><li>house mouse</li><li>blue tilapia</li><li>southern platyfish</li><li>medium ground-finch</li><li>Paramormyrops kingsleyae</li><li>Philippine tarsier</li><li>common wall lizard</li><li>swan goose</li><li>blue-ringed sea krait</li><li>common canary</li><li>Chinese hamster</li><li>African green monkey</li><li>golden-collared manakin</li><li>Long-tailed chinchilla</li><li>zebra finch</li><li>Sea squirt Ciona savignyi</li><li>Norway rat</li><li>ocean sunfish</li><li>little spotted kiwi</li><li>Indian medaka</li><li>cattle</li><li>leopard</li><li>Atlantic salmon</li><li>Alpine marmot</li><li>large yellow croaker</li><li>Upper Galilee mountains blind mole rat</li><li>Goodes thornscrub tortoise</li><li>Indian peafowl</li><li>common carp hebao red</li><li>denticle herring</li><li>koala</li><li>Midas cichlid</li><li>golden-line barbel</li><li>turbot</li><li>ruff</li><li>pig</li><li>pig</li><li>human</li><li>burrowing owl</li><li>Atlantic cod</li><li>Burton's mouthbrooder</li><li>donkey</li><li>domestic guinea pig</li><li>clown anemonefish</li><li>golden pheasant</li><li>Domestic sheep</li><li>red fox</li><li>bonobo</li><li>Indian glassy fish</li><li>spotted green pufferfish</li><li>ballan wrasse</li><li>pig</li><li>hybrid cattle</li><li>Budgie</li><li>meerkat</li><li>European seabass</li><li>African savanna elephant</li><li>emu</li><li>Tiger</li><li>fruit fly</li><li>steppe mouse</li><li>swamp eel</li><li>Japanese medaka HNI</li><li>jewelled blenny</li><li>house mouse</li><li>zebra mbuna</li><li>white-throated sparrow</li><li>Western painted turtle</li><li>zebrafish</li><li>goldfish</li><li>horse</li><li>greater horseshoe bat</li><li>eastern happy</li><li>tropical clawed frog</li><li>Spoon-billed sandpiper</li><li>Angola colobus</li><li>algerian mouse</li><li>dog</li><li>Macaque</li><li>thirteen-lined ground squirrel</li><li>gray mouse lemur</li><li>common wombat</li><li>rabbit</li><li>Polar bear</li><li>Atlantic herring</li><li>chicken</li><li>fugu</li><li>bicolor damselfish</li><li>house mouse</li><li>reedfish</li><li>Chinese softshell turtle</li><li>blunt-snouted clingfish</li><li>C.elegans</li><li>Coquerel's sifaka</li><li>Agassiz's desert tortoise</li><li>guppy</li><li>javanese ricefish</li><li>Makobe Island cichlid</li><li>vole</li><li>gelada</li><li>pinecone soldierfish</li><li>Arabian camel</li><li>Japanese medaka HSOK</li><li>Asiatic black bear</li><li>Bengalese finch</li><li>cape rock hyrax</li><li>domestic turkey</li><li>European shrew</li><li>Golden snub-nosed monkey</li><li>Black snub-nosed monkey</li><li>round goby</li><li>Asian bonytongue</li><li>electric eel</li><li>American bison</li><li>shortfin molly</li><li>orange clownfish</li><li>Komodo dragon</li><li>blind barbel</li><li>Ugandan red Colobus</li><li>Olive baboon</li><li>Lesser Egyptian jerboa</li><li>domestic cat</li><li>pink-footed goose</li><li>White-headed capuchin</li><li>Australian saltwater crocodile</li><li>naked mole-rat</li><li>house mouse</li><li>Abingdon island giant tortoise</li><li>Northern white-cheeked gibbon</li><li>house mouse</li><li>yellowtail amberjack</li><li>Bolivian squirrel monkey</li><li>Crab-eating macaque</li><li>Damara mole rat</li><li>huchen</li><li>rufous-capped babbler</li><li>blue-crowned manakin</li></ol></body></html> </ol>
+       </body>
+       </html>
 
 We do not put in the report more special cases of species list
 because our index page has a input type tag with a minimum and a maximum
@@ -58,8 +183,8 @@ Output:
 <!DOCTYPE html> 
 	<html lang="en"> 
 	<head>
-	<meta charset="UTF-8">
-	<title>Karyotype</title>
+	    <meta charset="UTF-8">
+	    <title>Karyotype</title>
 	</head>
 	<body style="background-color: #F6D8FF;">
 	<h1><b><FONT face = "Courier New">Karyotype</FONT></b></h1>
